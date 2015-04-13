@@ -1,0 +1,4 @@
+# Ignore generated files
+manual.pdf
+*.aux
+*.log
