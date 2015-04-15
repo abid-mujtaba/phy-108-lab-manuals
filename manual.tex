@@ -3,6 +3,9 @@
 \usepackage{manual-style}
 \include{manual-defs}
 
+\renewcommand{\arraystretch}{1.5}
+
+
 \begin{document}
 
    \manualtitle{Compound Pendulum}
@@ -56,18 +59,33 @@
 
       \subsection*{Tabulation}
 
-         We will record our data in the following table.
+         We will record our data in a table with the following format.
 
-         \begin{tabular}{| c | c | c | c || c || c | c |}
+         \begin{table}[h]
+            \centering
 
-            \hline
-            $l$ ($cm$) & $t_{10_1}$ ($s$) & $t_{10_2}$ ($s$) & $t_{10_3}$ ($s$) & $T$ ($s$) & $l^2$ (${cm}^2$) & $T^2 l$ (${cm}.s^2$) \\
+            \begin{tabular}{| c | c | c | c || c || c | c |}
+               %\centering
 
-            \hline
-               & & & & & & \\
-            \hline
+               \hline
+               $l$ ($cm$) & $t_{10_1}$ ($s$) & $t_{10_2}$ ($s$) & $t_{10_3}$ ($s$) & $T$ ($s$) & $l^2$ (${cm}^2$) & $T^2 l$ (${cm}.s^2$) \\
 
-         \end{tabular}
+               \hline
+                  & & & & & & \\
+               \hline
+
+            \end{tabular}
+         \end{table}
+         %
+         For each value of $l$ we will measure the time for 10 oscillations, three times. This will give us the three $t_{10_i}$. $T$ (the time for one oscillation) is calculated by averaging over the $t_{10_i}$ and dividing by 10, that is
+         %
+         \beq
+            T = \frac{t_{10_1} + t_{10_2} + t_{10_3}}{30}
+         \eeq
+
+         The four columns on the left are the measurements we take in the experiment. The rest of the columns are calculated using these measured values. The two columns on the right are the values we will plot on a graph.
+
+         \textit{It is recommended that you observe and right down all of the measurements (first four columns) first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
 
       \subsection*{Observation}
 
