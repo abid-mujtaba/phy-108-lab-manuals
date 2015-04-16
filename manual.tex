@@ -99,6 +99,8 @@
 
       Keep moving the pin to the next hole/slot until you reach the center of the bar. You will now have your complete set of measurements.
 
+      Finally measure $L_\text{actual}$ the total length of the bar pendulum using the meter-stick.
+
 
    \section*{Calculations}
 
@@ -114,10 +116,24 @@
       %
       \beqsn
          T^2 = 4 \pi^2 \paren{ \frac{L^2 + 12 \, l^2}{12 \, g l} } \\[0.25\baselineskip]
-         \imply T^2 = \frac{\pi^2}{3 \, g} \paren{ \frac{L^2 + 12 \, l^2}{12 \, g l} }
+         \imply T^2 = \frac{\pi^2}{3 g} \paren{ \frac{L^2 + 12 \, l^2}{l} }
       \eeqsn
-         
+      %
+      The equations is still not linear in $T^2$ and $l$ because of the $l$ in the denominator. We multiply both sides by $l$.
+      %
+      \beq
+         T^2 \, l = \frac{\pi^2}{3 g} \paren{12 \, l^2 + L^2}
+      \eeq
+      %
+      If we now consider this equation to be a relationship between $T^2 \, l$ and $l^2$ it is linear. Compare the equation to that of the straight line $y = m \, x + c$ and you can immediately deduce that
+      %
+      \beqcn
+         \text{slope} = \frac{12 \pi^2}{3 g} = \frac{4 \pi^2}{g}\\[0.5\baselineskip]
+         y\text{-intercept} = \frac{\pi^2 L^2}{3 g}
+      \eeqcn
 
+      \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$}. \textit{Take special care with your choice of scale. Label all axes clearly.}
 
+      \textbf{Use your graph to calculate the slope and y-intercept}. \textit{Don't forget to write down the units}.
 
 \end{document}
