@@ -45,7 +45,7 @@
          \item $l$ is the distance from the center of mass of the bar to the pivot
       \end{itemize}
 
-      Our aim is to vary $l$ by changing the location of the pivot, and for each value of $l$ observe the time period $T$. These observations will be used to calculate the acceleration of gravity and the total length of the bar.
+      Our aim is to vary $l$ by changing the location of the pivot, and for each value of $l$ measure the time period $T$. These observations will be used to calculate the acceleration of gravity and the total length of the bar.
 
       \subsection*{Setup}
 
@@ -77,7 +77,7 @@
             \end{tabular}
          \end{table}
          %
-         For each value of $l$ we will measure the time for 10 oscillations, three times giving us the three $t_{10_i}$. $T$ (the time for one oscillation) is calculated by averaging over the $t_{10_i}$ and dividing by 10, that is
+         For each value of $l$ we will measure the time for 10 oscillations, three times, giving us the three $t_{10_i}$. $T$ (the time for one oscillation) is calculated by averaging over the $t_{10_i}$ and dividing by 10, that is
          %
          \beq \label{calc_T}
             T = \frac{t_{10_1} + t_{10_2} + t_{10_3}}{30}
@@ -102,9 +102,9 @@
       Finally measure $L_\text{actual}$ the total length of the bar pendulum using the meter-stick.
 
 
-   \section*{Calculations}
+   \section*{Calculations and Graphs}
 
-      Use equation (\ref{calc_T}) to calculate $T$ and complete the table.
+      \textbf{Use equation (\ref{calc_T}) to calculate $T$ and complete the table.}\\
 
       The time period of the oscillations of a rigid bar is given by equation (\ref{eqn_T}). This equation is not linear in the dependence of $T$ on $l$. We transform the equation to get a linear relationship. We start with the original equation.
 %
@@ -127,13 +127,34 @@
       %
       If we now consider this equation to be a relationship between $T^2 \, l$ and $l^2$ it is linear. Compare the equation to that of the straight line $y = m \, x + c$ and you can immediately deduce that
       %
-      \beqcn
+      \beqc \label{graph}
          \text{slope} = \frac{12 \pi^2}{3 g} = \frac{4 \pi^2}{g}\\[0.5\baselineskip]
          y\text{-intercept} = \frac{\pi^2 L^2}{3 g}
-      \eeqcn
+      \eeqc
 
       \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$}. \textit{Take special care with your choice of scale. Label all axes clearly.}
 
       \textbf{Use your graph to calculate the slope and y-intercept}. \textit{Don't forget to write down the units}.
+
+
+   \section*{Results}
+
+      \begin{enumerate}
+
+         \item Use the calculated value of slope and equation (\ref{graph}) to calculate the value of the acceleration of gravity $g$.
+         
+         \item The actual value of $g$ is $981 \, cm/s^2$. Compare your calculated value with this by calculating the percentage uncertainty. It is defined as
+         %
+         \beq
+         \text{percentage uncertainty} = \frac{|\, \text{actual value} - \text{measured value} \,|}{\text{actual value}} \times 100 \%
+         \eeq
+
+         \item Use the calculated value of the y-intercept, equation (\ref{graph}) and the value of $g$ (calculated from the slope) to calculate the value of $L$, the length of the bar.
+
+         \item Compare this with the actual value ($L_\text{actual}$) measured directly using the meter-stick, by calculating the percentage uncertainty.
+
+         \item List the possible sources of error in this experiment.
+
+   \end{enumerate}
 
 \end{document}
