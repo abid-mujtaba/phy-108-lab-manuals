@@ -32,7 +32,7 @@
 
       A compound pendulum is a rigid body whose mass is not concentrated at one point and which is capable of oscillating about some fixed pivot (axis of rotation). In this experiment we will be studying the behavior of a uniform metallic bar acting as a compound pendulum. The time-period of the oscillations of a uniform bar is governed by the equation
       %
-      \beq
+      \beq \label{eqn_T}
          T = 2 \pi \sqrt{\frac{L^2 + 12 \, l^2}{12 \, g l}}
       \eeq
       %
@@ -79,7 +79,7 @@
          %
          For each value of $l$ we will measure the time for 10 oscillations, three times giving us the three $t_{10_i}$. $T$ (the time for one oscillation) is calculated by averaging over the $t_{10_i}$ and dividing by 10, that is
          %
-         \beq
+         \beq \label{calc_T}
             T = \frac{t_{10_1} + t_{10_2} + t_{10_3}}{30}
          \eeq
 
@@ -99,13 +99,25 @@
 
       Keep moving the pin to the next hole/slot until you reach the center of the bar. You will now have your complete set of measurements.
 
-         
-
-
-
-
 
    \section*{Calculations}
+
+      Use equation (\ref{calc_T}) to calculate $T$ and complete the table.
+
+      The time period of the oscillations of a rigid bar is given by equation (\ref{eqn_T}). This equation is not linear in the dependence of $T$ on $l$. We transform the equation to get a linear relationship. We start with the original equation.
+%
+      \beqn
+         T = 2 \pi \sqrt{\frac{L^2 + 12 \, l^2}{12 \, g l}}
+      \eeqn
+      %
+      We square both sides to remove the square-root on the RHS.
+      %
+      \beqsn
+         T^2 = 4 \pi^2 \paren{ \frac{L^2 + 12 \, l^2}{12 \, g l} } \\[0.25\baselineskip]
+         \imply T^2 = \frac{\pi^2}{3 \, g} \paren{ \frac{L^2 + 12 \, l^2}{12 \, g l} }
+      \eeqsn
+         
+
 
 
 \end{document}
