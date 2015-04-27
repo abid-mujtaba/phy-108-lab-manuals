@@ -66,38 +66,75 @@
          \begin{table}[h]
             \centering
 
-            \begin{tabular}{| c | c | c | c | c | c || c | c | c | c || c | c | c |}
-               %\centering
+            \begin{tabular}{| c | c | c | c | c | c |}
 
                \hline
-               $l$ (\si{\centi\metre}) & $t_{10_1}$ (\si{\second}) & $t_{10_2}$ (\si{\second}) & $t_{10_3}$ (\si{\second}) & $t_{10_4}$ (\si{\second}) & $t_{10_5}$ (\si{\second}) & $\bar{t}_{10}$ (\si{\second}) & $\Delta(t_{10})$ (\si{\second}) & $T$ (\si{\second}) & $\Delta T$ (\si{\second}) & $l^2$ (\si{\square\centi\metre}) & $T^2 l$ (\si{\centi\metre \square\second}) \\
+               $l$ (\si{\centi\metre}) & $t_{10_1}$ (\si{\second}) & $t_{10_2}$ (\si{\second}) & $t_{10_3}$ (\si{\second}) & $t_{10_4}$ (\si{\second}) & $t_{10_5}$ (\si{\second}) \\
 
                \hline
-                  & & & & & & & & & & & \\
+                  & & & & & \\
                \hline
 
             \end{tabular}
          \end{table}
          %
-         For each value of $l$ we will measure the time for 10 oscillations, three times, giving us the three $t_{10_i}$. $T$ (the time for one oscillation) is calculated by averaging over the $t_{10_i}$ and dividing by 10, that is
+         For each value of $l$ we will measure the time for 10 oscillations, five times, giving us the five $t_{10_i}$. This table consists of the measurements we take in the experiment. From these measured values we calculate other derived quantities which will allow us to achieve our objective of calculating the values of $g$ and $L$. 
+         
+         Calculate and record the derived quantities in a table with the following format.
+        
+         \begin{table}[h]
+            \centering
+
+            \begin{tabular}{| c || c | c | c | c || c | c | c ||}
+
+               \hline
+               $l$ (\si{\centi\metre}) & $\bar{t}_{10}$ (\si{\second}) & $\Delta(t_{10})$ (\si{\second}) & $T$ (\si{\second}) & $\Delta T$ (\si{\second}) & $l^2$ (\si{\square\centi\metre}) & $T^2 l$ (\si{\centi\metre \square\second}) & $\Delta (T^2 l)$ (\si{\centi\metre \square\second}) \\
+
+               \hline
+                  & & & & & & & \\
+               \hline
+
+            \end{tabular}
+         \end{table}
+         %
+         where $\bar{t}_{10}$ is the average/mean of the five $t_{10_i}$ and $\Delta (t_{10})$ is the standard deviation given by
+         %
+         \beq \label{calc_Dt10}
+            \Delta (t_{10}) = \sqrt{\frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2}
+         \eeq
+            
+         
+         $T$ (the time for one oscillation) is calculated by dividing the mean time for 10 oscillations ($t_{10}$) by 10, that is
          %
          \beq \label{calc_T}
-            T = \frac{t_{10_1} + t_{10_2} + t_{10_3}}{30}
+            T = \frac{\bar{t}_{10}}{10}
+         \eeq
+         %
+         The corresponding uncertainty $\Delta T$ is given by
+         %
+         \beq
+            \Delta T = \frac{\Delta (\bar{t}_{10})}{10}
          \eeq
 
-         The four columns on the left are the measurements we take in the experiment. The rest of the columns are calculated using these measured values. The two columns on the right ($l^2$ and $T^2 \, l$) are the values we will plot on a graph.
+         The uncertainty in the derived quantity $T^2 \, l$, denoted by $\Delta (T^2 \, l)$, comes from this uncertainty $\Delta T$ in $T$. It is calculated using
+         %
+         \beq \label{calc_DT2l}
+            \frac{\Delta (T^2 \, l)}{T^2 \, l} = 2 \frac{\Delta T}{T}
+         \eeq
+         
+         where the factor of $2$ comes from $T$ being raised to the power $2$ in the expression $T^2 \, l$.
 
-         \textit{It is recommended that you observe and right down all of the measurements (first four columns) first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
+         \textit{It is recommended that you observe and right down all of the measurements (the first table) first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
 
       \subsection*{Observation}
 
       Start with the pin placed in the top-most hole/slot (next to the end labeled \textbf{A}). Use the meter-stick to measure the distance from the Center of Mass of the bar to the center of the pin from which the bar is suspended. This is $l$. Note down this value in the table.
 
-      Start the oscillations by pulling the bar a few degrees (less than 10) out of its stationary vertical position and letting go. Use the telescope to observe the bar swinging past its initial vertical position. This will allow you to count complete oscillations of the pendulum (an oscillation is completed every time the pendulum swings past the initial position moving in the same direction). Use the stop-watch to measure the time taken to complete 10 oscillations. This is $t_{10_1}$.
+      Start the oscillations by pulling the bar a few degrees (less than 20) out of its stationary vertical position and letting go. Use the telescope to observe the bar swinging past its initial vertical position. This will allow you to count complete oscillations of the pendulum (an oscillation is completed every time the pendulum swings past the initial position moving in the same direction). Use the stop-watch to measure the time taken to complete 10 oscillations. This is $t_{10_1}$.
 
-      Stop the pendulum and then start it swinging again. Take two more measurements of the time taken to complete 10 oscillations. These are $t_{10_2}$ and $t_{10_3}$. Note these values in the table.
+      Stop the pendulum and then start it swinging again. Take four more measurements of the time taken to complete 10 oscillations. These are $t_{10_2}$, $t_{10_3}$, $t_{10_4}$ and $t_{10_5}$. Note these values in the first table.
 
-      Move the pin to the next hole/slot, below the current one. Measure the new value of $l$ and repeat the above procedure to get the three values for the time taken by 10 oscillations.
+      Move the pin to the next hole/slot, below the current one. Measure the new value of $l$ and repeat the above procedure to get the five values for the time taken by 10 oscillations.
 
       Keep moving the pin to the next hole/slot until you reach the center of the bar. You will now have your complete set of measurements.
 
@@ -106,7 +143,7 @@
 
    \section*{Calculations and Graphs}
 
-      \textbf{Use equation (\ref{calc_T}) to calculate $T$ and complete the table.}\\
+      \textbf{Use equations (\ref{calc_Dt10}) - (\ref{calc_DT2l}) to calculate the derived quantities and complete the table.}\\
 
       The time period of the oscillations of a rigid bar is given by equation (\ref{eqn_T}). This equation is not linear in the dependence of $T$ on $l$. We transform the equation to get a linear relationship. We start with the original equation.
 %
