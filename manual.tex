@@ -173,14 +173,20 @@
 
       \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$}. \textit{Take special care with your choice of scale. Label all axes clearly.}
 
-      \textbf{Use your graph to calculate the slope and y-intercept}. \textit{Don't forget to write down the units}.
+      \textbf{Use your graph to calculate the slope and y-intercept of the best-fit line}. \textit{Don't forget to write down the units}.
+
+      \textbf{Draw additional steep and shallow fit lines and calculate and note the uncertainty in the slope and y-intercept}.
 
 
    \section*{Results}
 
       \begin{enumerate}
 
-         \item Use the calculated value of slope and equation (\ref{graph}) to calculate the value of the acceleration of gravity $g$.
+         \item Use the calculated value of the slope, its uncertainty and equation (\ref{graph}) to calculate the value of the acceleration of gravity $g$ and its associated uncertainty.
+
+            \beqn
+               \frac{\Delta g}{g} = \frac{\Delta (\text{slope})}{\text{slope}}
+            \eeqn
          
          \item The actual value of $g$ is $981 \, cm/s^2$. Compare your calculated value with this by calculating the percentage uncertainty. It is defined as
          %
@@ -188,7 +194,11 @@
          \text{percentage uncertainty} = \frac{|\, \text{actual value} - \text{measured value} \,|}{\text{actual value}} \times 100 \%
          \eeq
 
-         \item Use the calculated value of the y-intercept, equation (\ref{graph}) and the value of $g$ (calculated from the slope) to calculate the value of $L$, the length of the bar.
+      \item Use the calculated value of the y-intercept, its uncertainty, equation (\ref{graph}) and the value of $g$ (calculated from the slope) to calculate the value of $L$ (the length of the bar) and its associated uncertainty.
+
+            \beqn
+               \frac{\Delta L}{L} = \frac{1}{2} \frac{\Delta g}{g} + \frac{1}{2} \frac{\Delta (\text{y-intercept})}{\text{y-intercept}}
+            \eeqn
 
          \item Compare this with the actual value ($L_\text{actual}$) measured directly using the meter-stick, by calculating the percentage uncertainty.
 
