@@ -79,52 +79,8 @@
          \end{table}
          %
          For each value of $l$ we will measure the time for 10 oscillations, five times, giving us the five $t_{10_i}$. This table consists of the measurements we take in the experiment. From these measured values we calculate other derived quantities which will allow us to achieve our objective of calculating the values of $g$ and $L$. 
-         
-         Calculate and record the derived quantities in a table with the following format.
-        
-         \begin{table}[h]
-            \centering
 
-            \begin{tabular}{| c || c | c | c | c || c | c | c ||}
-
-               \hline
-               $l$ (\si{\centi\metre}) & $\bar{t}_{10}$ (\si{\second}) & $\Delta(t_{10})$ (\si{\second}) & $T$ (\si{\second}) & $\Delta T$ (\si{\second}) & $l^2$ (\si{\square\centi\metre}) & $T^2 l$ (\si{\centi\metre \square\second}) & $\Delta (T^2 l)$ (\si{\centi\metre \square\second}) \\
-
-               \hline
-                  & & & & & & & \\
-               \hline
-
-            \end{tabular}
-         \end{table}
-         %
-         where $\bar{t}_{10}$ is the average/mean of the five $t_{10_i}$ and $\Delta (t_{10})$ is the standard deviation given by
-         %
-         \beq \label{calc_Dt10}
-            \Delta (t_{10}) = \sqrt{\frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2}
-         \eeq
-            
-         
-         $T$ (the time for one oscillation) is calculated by dividing the mean time for 10 oscillations ($t_{10}$) by 10, that is
-         %
-         \beq \label{calc_T}
-            T = \frac{\bar{t}_{10}}{10}
-         \eeq
-         %
-         The corresponding uncertainty $\Delta T$ is given by
-         %
-         \beq
-            \Delta T = \frac{\Delta (\bar{t}_{10})}{10}
-         \eeq
-
-         The uncertainty in the derived quantity $T^2 \, l$, denoted by $\Delta (T^2 \, l)$, comes from this uncertainty $\Delta T$ in $T$. It is calculated using
-         %
-         \beq \label{calc_DT2l}
-            \frac{\Delta (T^2 \, l)}{T^2 \, l} = 2 \frac{\Delta T}{T}
-         \eeq
-         
-         where the factor of $2$ comes from $T$ being raised to the power $2$ in the expression $T^2 \, l$.
-
-         \textit{It is recommended that you observe and right down all of the measurements (the first table) first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
+         \textit{It is recommended that you observe and right down all of the measurements first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
 
       \subsection*{Observation}
 
@@ -141,9 +97,54 @@
       Finally measure $L_\text{actual}$ the total length of the bar pendulum using the meter-stick.
 
 
-   \section*{Calculations and Graphs}
+   \section*{Calculations}
 
-      \textbf{Use equations (\ref{calc_Dt10}) - (\ref{calc_DT2l}) to calculate the derived quantities and complete the table.}\\
+      Use your measurements to calculate and record the derived quantities in a table with the following format.
+      
+      \begin{table}[h]
+         \centering
+
+         \begin{tabular}{| c || c | c | c | c || c | c | c ||}
+
+            \hline
+            $l$ (\si{\centi\metre}) & $\bar{t}_{10}$ (\si{\second}) & $\Delta(t_{10})$ (\si{\second}) & $T$ (\si{\second}) & $\Delta T$ (\si{\second}) & $l^2$ (\si{\square\centi\metre}) & $T^2 l$ (\si{\centi\metre \square\second}) & $\Delta (T^2 l)$ (\si{\centi\metre \square\second}) \\
+
+            \hline
+               & & & & & & & \\
+            \hline
+
+         \end{tabular}
+      \end{table}
+      %
+      where $\bar{t}_{10}$ is the average/mean of the five $t_{10_i}$ and $\Delta (t_{10})$ is the standard deviation given by
+      %
+      \beq \label{calc_Dt10}
+         \Delta (t_{10}) = \sqrt{\frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2}
+      \eeq
+         
+      
+      $T$ (the time for one oscillation) is calculated by dividing the mean time for 10 oscillations ($t_{10}$) by 10, that is
+      %
+      \beq \label{calc_T}
+         T = \frac{\bar{t}_{10}}{10}
+      \eeq
+      %
+      The corresponding uncertainty $\Delta T$ is given by
+      %
+      \beq
+         \Delta T = \frac{\Delta (\bar{t}_{10})}{10}
+      \eeq
+
+      The uncertainty in the derived quantity $T^2 \, l$, denoted by $\Delta (T^2 \, l)$, comes from this uncertainty $\Delta T$ in $T$. It is calculated using
+      %
+      \beq \label{calc_DT2l}
+         \frac{\Delta (T^2 \, l)}{T^2 \, l} = 2 \frac{\Delta T}{T}
+      \eeq
+      
+      where the factor of $2$ comes from $T$ being raised to the power $2$ in the expression $T^2 \, l$.
+
+
+   \section*{Graph}
 
       The time period of the oscillations of a rigid bar is given by equation (\ref{eqn_T}). This equation is not linear in the dependence of $T$ on $l$. We transform the equation to get a linear relationship. We start with the original equation.
 %
@@ -171,7 +172,7 @@
          y\text{-intercept} = \frac{\pi^2 L^2}{3 g}
       \eeqc
 
-      \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$}. \textit{Take special care with your choice of scale. Label all axes clearly.}
+      \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$ including error bars}. \textit{Take special care with your choice of scale. Label all axes clearly.}
 
       \textbf{Use your graph to calculate the slope and y-intercept of the best-fit line}. \textit{Don't forget to write down the units}.
 
