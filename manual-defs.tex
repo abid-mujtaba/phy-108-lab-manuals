@@ -1,6 +1,15 @@
 % We provide definition of commands that are used in all Lab Manuals
 
-\newcommand{\manualtitle}[1]{\begin{center}{\Huge #1}\end{center}\vspace{2\baselineskip}}
+% We customize the \maketitle command to make it generate the content that we want
+\makeatletter       % We use this command because we want to refer to variables in our definition that contain the character @
+\renewcommand{\maketitle}{
+   \begin{center}
+      {\Huge \@title}
+   \end{center}
+   \vspace{2\baselineskip}
+}
+\makeatother        % Stop treating @ as a normal character
+
 
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
