@@ -6,5 +6,5 @@ all:
 	evince manual.pdf &		# Open the pdf file using the evince viewer
 
 # If any *.tex file is changed we compile again to create the pdf file
-manual.pdf: *.tex
+manual.pdf: *.tex *.sty
 	pdflatex manual.tex
