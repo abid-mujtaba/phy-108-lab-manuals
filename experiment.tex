@@ -1,0 +1,196 @@
+% This section comprises the experimental instructions.
+
+\section*{Objective}
+
+   Calculate the value of $g$ (acceleration of gravity) and $L$ (the length of the compound pendulum).
+
+
+\section*{Apparatus}
+
+   \begin{itemize}
+
+      \item Slotted metal bar
+      \item Suspension bracket
+      \item Stop-watch
+      \item Meter Rule
+      \item Telescope
+
+   \end{itemize}
+
+
+\section*{Procedure}
+
+   A compound pendulum is a rigid body whose mass is not concentrated at one point and which is capable of oscillating about some fixed pivot (axis of rotation). In this experiment we will be studying the behavior of a uniform metallic bar acting as a compound pendulum. The time-period of the oscillations of a uniform bar is governed by the equation
+   %
+   \beq \label{eqn_T}
+      T = 2 \pi \sqrt{\frac{L^2 + 12 \, l^2}{12 \, g l}}
+   \eeq
+   %
+   where
+   %
+   \begin{itemize}
+      \item $T$ is the time period
+      \item $L$ is the total length of the bar
+      \item $g$ is the acceleration of gravity
+      \item $l$ is the distance from the center of mass of the bar to the pivot
+   \end{itemize}
+
+   Our aim is to vary $l$ by changing the location of the pivot, and for each value of $l$ measure the time period $T$. These observations will be used to calculate the acceleration of gravity and the total length of the bar.
+
+   \subsection*{Setup}
+
+      You will be provided a metallic bar with a number of holes/slots placed along its length. Its two ends will be labeled \textbf{A} and \textbf{B}. The center of mass of the bar will be indicated by a line drawn across its middle. The bar is to be suspended from the wall-mounted bracket using a set of pin and nuts.
+
+      Choose the end of the bar labeled \textbf{A}. Pass the pin through the hole/slot closest to this end (furthest away from the center) and use the provided nuts to tighten it in place. Ensure that roughly the same amount of pin protrudes from both ends.
+
+      Now suspend the bar from the wall-bracket using the pin. The pin will support the bar and will allow it to oscillate parallel to the wall in the vertical plain.
+
+      Place the telescope on a stool and position it so that you can view the suspended bar through it. Adjust the eye-piece (by sliding it) to bring the bar in to focus. Rotate the telescope in place until the cross-hairs are diagonal (no longer aligned with the horizontal and vertical directions). We will use the telescope to count the oscillations of the bar.
+
+   \subsection*{Tabulation}
+
+      Record your data in a table with the following format.
+
+      \begin{table}[h]
+         \centering
+
+         \begin{tabular}{| c | c | c | c | c | c |}
+
+            \hline
+            $l$ (\si{\centi\metre}) & $t_{10_1}$ (\si{\second}) & $t_{10_2}$ (\si{\second}) & $t_{10_3}$ (\si{\second}) & $t_{10_4}$ (\si{\second}) & $t_{10_5}$ (\si{\second}) \\
+
+            \hline
+               & & & & & \\
+            \hline
+
+         \end{tabular}
+      \end{table}
+      %
+      For each value of $l$ we will measure the time for 10 oscillations, five times, giving us the five $t_{10_i}$. This table consists of the measurements we take in the experiment. From these measured values we calculate other derived quantities which will allow us to achieve our objective of calculating the values of $g$ and $L$. 
+
+      \textit{It is recommended that you observe and right down all of the measurements first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
+
+   \subsection*{Observation}
+
+   Start with the pin placed in the top-most hole/slot (next to the end labeled \textbf{A}). Use the meter-stick to measure the distance from the Center of Mass of the bar to the center of the pin from which the bar is suspended. This is $l$. Note down this value in the table.
+
+   Start the oscillations by pulling the bar a few degrees (less than 20) out of its stationary vertical position and letting go. Use the telescope to observe the bar swinging past its initial vertical position. This will allow you to count complete oscillations of the pendulum (an oscillation is completed every time the pendulum swings past the initial position moving in the same direction). Use the stop-watch to measure the time taken to complete 10 oscillations. This is $t_{10_1}$.
+
+   Stop the pendulum and then start it swinging again. Take four more measurements of the time taken to complete 10 oscillations. These are $t_{10_2}$, $t_{10_3}$, $t_{10_4}$ and $t_{10_5}$. Note these values in the first table.
+
+   Move the pin to the next hole/slot, below the current one. Measure the new value of $l$ and repeat the above procedure to get the five values for the time taken by 10 oscillations.
+
+   Keep moving the pin to the next hole/slot until you reach the center of the bar. You will now have your complete set of measurements.
+
+   Finally measure $L_\text{actual}$ the total length of the bar pendulum using the meter-stick.
+
+
+\section*{Calculations}
+
+   Use your measurements to calculate and record the derived quantities in a table with the following format.
+   
+   \begin{table}[h]
+      \centering
+
+      \begin{tabular}{| c || c | c | c | c || c | c | c ||}
+
+         \hline
+         $l$ (\si{\centi\metre}) & $\bar{t}_{10}$ (\si{\second}) & $\Delta(t_{10})$ (\si{\second}) & $T$ (\si{\second}) & $\Delta T$ (\si{\second}) & $l^2$ (\si{\square\centi\metre}) & $T^2 l$ (\si{\centi\metre \square\second}) & $\Delta (T^2 l)$ (\si{\centi\metre \square\second}) \\
+
+         \hline
+            & & & & & & & \\
+         \hline
+
+      \end{tabular}
+   \end{table}
+   %
+   where $\bar{t}_{10}$ is the average/mean of the five $t_{10_i}$ and $\Delta (t_{10})$ is the standard deviation given by
+   %
+   \beq \label{calc_Dt10}
+      \Delta (t_{10}) = \sqrt{\frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2}
+   \eeq
+      
+   
+   $T$ (the time for one oscillation) is calculated by dividing the mean time for 10 oscillations ($t_{10}$) by 10, that is
+   %
+   \beq \label{calc_T}
+      T = \frac{\bar{t}_{10}}{10}
+   \eeq
+   %
+   The corresponding uncertainty $\Delta T$ is given by
+   %
+   \beq
+      \Delta T = \frac{\Delta (\bar{t}_{10})}{10}
+   \eeq
+
+   The uncertainty in the derived quantity $T^2 \, l$, denoted by $\Delta (T^2 \, l)$, comes from this uncertainty $\Delta T$ in $T$. It is calculated using
+   %
+   \beq \label{calc_DT2l}
+      \frac{\Delta (T^2 \, l)}{T^2 \, l} = 2 \frac{\Delta T}{T}
+   \eeq
+   
+   where the factor of $2$ comes from $T$ being raised to the power $2$ in the expression $T^2 \, l$.
+
+
+\section*{Graph}
+
+   The time period of the oscillations of a rigid bar is given by equation (\ref{eqn_T}). This equation is not linear in the dependence of $T$ on $l$. We transform the equation to get a linear relationship. We start with the original equation.
+%
+   \beqn
+      T = 2 \pi \sqrt{\frac{L^2 + 12 \, l^2}{12 \, g l}}
+   \eeqn
+   %
+   We square both sides to remove the square-root on the RHS.
+   %
+   \beqsn
+      T^2 = 4 \pi^2 \paren{ \frac{L^2 + 12 \, l^2}{12 \, g l} } \\[0.25\baselineskip]
+      \imply T^2 = \frac{\pi^2}{3 g} \paren{ \frac{L^2 + 12 \, l^2}{l} }
+   \eeqsn
+   %
+   The equations is still not linear in $T^2$ and $l$ because of the $l$ in the denominator. We multiply both sides by $l$.
+   %
+   \beq
+      T^2 \, l = \frac{\pi^2}{3 g} \paren{12 \, l^2 + L^2}
+   \eeq
+   %
+   If we now consider this equation to be a relationship between $T^2 \, l$ and $l^2$ it is linear. Compare the equation to that of the straight line $y = m \, x + c$ and you can immediately deduce that
+   %
+   \beqc \label{graph}
+      \text{slope} = \frac{12 \pi^2}{3 g} = \frac{4 \pi^2}{g}\\[0.5\baselineskip]
+      y\text{-intercept} = \frac{\pi^2 L^2}{3 g}
+   \eeqc
+
+   \textbf{Draw a linear graph of $T^2 \, l$ vs. $l^2$ including error bars}. \textit{Take special care with your choice of scale. Label all axes clearly.}
+
+   \textbf{Use your graph to calculate the slope and y-intercept of the best-fit line}. \textit{Don't forget to write down the units}.
+
+   \textbf{Draw additional steep and shallow fit lines and calculate and note the uncertainty in the slope and y-intercept}.
+
+
+\section*{Results}
+
+   \begin{enumerate}
+
+      \item Use the calculated value of the slope, its uncertainty and equation (\ref{graph}) to calculate the value of the acceleration of gravity $g$ and its associated uncertainty.
+
+         \beqn
+            \frac{\Delta g}{g} = \frac{\Delta (\text{slope})}{\text{slope}}
+         \eeqn
+      
+      \item The actual value of $g$ is $981 \, cm/s^2$. Compare your calculated value with this by calculating the percentage uncertainty. It is defined as
+      %
+      \beq
+      \text{percentage uncertainty} = \frac{|\, \text{actual value} - \text{measured value} \,|}{\text{actual value}} \times 100 \%
+      \eeq
+
+   \item Use the calculated value of the y-intercept, its uncertainty, equation (\ref{graph}) and the value of $g$ (calculated from the slope) to calculate the value of $L$ (the length of the bar) and its associated uncertainty.
+
+         \beqn
+            \frac{\Delta L}{L} = \frac{1}{2} \frac{\Delta g}{g} + \frac{1}{2} \frac{\Delta (\text{y-intercept})}{\text{y-intercept}}
+         \eeqn
+
+      \item Compare this with the actual value ($L_\text{actual}$) measured directly using the meter-stick, by calculating the percentage uncertainty.
+
+      \item List the possible sources of error in this experiment.
+
+\end{enumerate}
