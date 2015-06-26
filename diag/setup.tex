@@ -1,15 +1,22 @@
 \begin{tikzpicture}
    
    \def\b{-5.5}         % Variable containing the position of the bottom of the bar
+   \def\hw{0.2}         % Half-width of the bar
+   \def\r{0.05}         % Radius of the pin-hole circles in the bar
 
    \draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
 
    \draw [rotate around={-30:(0,0)}]      % Rotate the following constructed object (bar with holes) about the origin by -30 degrees
 
-      (-0.2, 1) rectangle (0.2, \b)       % The rectangle representing the outline of the order
+      (-\hw, 1) rectangle (\hw, \b)       % The rectangle representing the outline of the order
 
       \foreach \y in {0.75,0,...,\b}      % We use a foreach loop to draw the circles on the bar placing them 0.75 units apart with one at the pivot
-         {(0,\y) circle [radius=0.05]}    % The foreach loop variable \y is used to position the center of the circles
+         {(0,\y) circle [radius=\r]}      % The foreach loop variable \y is used to position the center of the circles
+
+      (-\hw, -2.25) -- (-\r, -2.25)       % Horizontal marker for Center of Mass which consists of lines on either side of the pin-hole (circle)
+      (\r, -2.25) -- (\hw, -2.25)
    ;
+
+   \draw [thick] (0,0) circle [radius=\r];          % Draw a thicker circle to represent the pivot
 
 \end{tikzpicture}
