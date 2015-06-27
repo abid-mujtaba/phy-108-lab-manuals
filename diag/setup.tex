@@ -1,8 +1,11 @@
 \begin{tikzpicture}
+
+   \helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
    
    \def\b{-5.5}         % Variable containing the position of the bottom of the bar
    \def\hw{0.2}         % Half-width of the bar
    \def\r{0.05}         % Radius of the pin-hole circles in the bar
+   \def\cy{-2.25}       % Vertical position of center of bar
 
    \draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
 
@@ -13,10 +16,10 @@
       \foreach \y in {0.75,0,...,\b}      % We use a foreach loop to draw the circles on the bar placing them 0.75 units apart with one at the pivot
          {(0,\y) circle [radius=\r]}      % The foreach loop variable \y is used to position the center of the circles
 
-      (-\hw, -2.25) -- (-\r, -2.25)       % Horizontal marker for Center of Mass which consists of lines on either side of the pin-hole (circle)
-      (\r, -2.25) -- (\hw, -2.25)
+      (-\hw, \cy) -- (-\r, \cy)       % Horizontal marker for Center of Mass which consists of lines on either side of the pin-hole (circle)
+      (\r, \cy) -- (\hw, \cy)
 
-      (-\hw-0.05, -2.35) node[left] {center of mass}
+      (-\hw-0.05, \cy-0.1) node[left] {center of mass}
    ;
 
    \draw [thick] (0,0) circle [radius=\r];          % Draw a thicker circle to represent the pivot
