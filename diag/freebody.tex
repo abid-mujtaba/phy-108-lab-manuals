@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+
+   %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
+   
+   \def\b{-5.5}         % Variable containing the position of the bottom of the bar
+   \def\hw{0.2cm}       % Half-width of the bar
+   \def\r{0.05}         % Radius of the pin-hole circles in the bar
+   \def\cy{-2.25}       % Vertical position of center of bar
+
+   \draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
+
+   \draw [rotate around={-30:(0,0)}]      % Rotate the following constructed object (bar with holes) about the origin by -30 degrees
+
+      (0,1) -- (0,\b)       % The thick line representing the bar
+
+      [thick, fill]                     % These attributes will be applied to the circles that follow
+      (0,0) circle [radius=\r]          % Draw a thick point to represent the pivot
+      (0,\cy) circle [radius=\r]        % Draw a thick point to represent the Center of Mass
+   ;
+
+   % Show angle theta using an arc with an arrow
+   \def\ar{1}         % Radius of arc used to define angle
+   \draw [->,>=stealth] (0, -\ar) arc (-90:-120:\ar);           % Draw an arc with an arrow at the end for the angle
+   \draw (-100:\ar+0.25) node {$\theta$};                       % Note the use of polar coordinates to place the variable theta
+
+   \dimline[offset = -0.5cm, show extensions = false]{(-120:-\cy)}{(0,0)}{$l$};
+
+\end{tikzpicture}
