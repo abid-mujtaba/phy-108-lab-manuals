@@ -18,8 +18,31 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
 
 \section{Free-Body Diagram}
 
-To calculate the time period $T$ one has to derive the equation of motion $\theta(t)$, namely how the angle $\theta$ varies as a function of time $t$. The first step, as always, is drawing the extended free body diagram of the system (extended because we are dealing with a rotational system and therefore the distance from the pivot is significant).
+   To calculate the time period $T$ one has to derive the equation of motion $\theta(t)$, namely how the angle $\theta$ varies as a function of time $t$. The first step, as always, is drawing the extended free body diagram of the system (extended because we are dealing with a rotational system and therefore the distance from the pivot is significant).
 
    \begin{center}
       \input{diag/freebody}
    \end{center}
+
+
+   Since we are only interested in the angle $\theta$ that represents the rotation of the bar about the pivot we calculate the torque about the pivot. This has the added advantage that it removes the unknown force $\vec{F}_p$ from consideration because the torque of a force that passes through the pivot is zero. So the only force that generates a torque about the pivot is the weight $m g$:
+   \beq
+      \tau = m g l \sin(\theta)
+   \eeq
+
+   The effect of this torque is to produce angular acceleration according the Newton's Second Law of Motion:
+   \beq
+      \tau = I \alpha
+   \eeq
+   where $I$ is the Moment of Inertia of the bar about the pivot and $\alpha = \frac{d^2 \theta}{dt^2}$ is its angular acceleration.
+
+   \vspace{\baselineskip} 
+   The next step is to calculate the Moment of Inertia $I$ of the bar about the pivot for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
+   \beq
+      I = I_{CM} + m \, l^2
+   \eeq
+   where $I_{CM}$ is the moment of inertia of the bar about its center of mass and $l$ is the distance from the pivot to the center of mass. In turn, $I_{CM}$ is calculated by considering the bar to have negligible width and uniform mass distribution.
+   \beq
+      I_{CM} = \frac{1}{12} \, m \, L^2
+   \eeq
+   where $L$ is the total length of the bar.
