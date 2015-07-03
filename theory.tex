@@ -25,3 +25,25 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
    \end{center}
 
    There are two forces acting on the bar. Its weight, which acts at the bar's center of mass/gravity, and a force of unknown magnitude and direction acting at the pivot, $\vec{F}_p$. We are interested in calculating $\theta(t)$ so we focus on the rotation of the bar about the pivot and calculate torque. Since the unknown force $\vec{F}_p$ acts at the pivot its torque about the pivot is zero (moment-arm has zero length). Therefore only the weight $m g$ appears in our calculations.
+
+   Since we are only interested in the angle $\theta$ that represents the rotation of the bar about the pivot we calculate the torque about the pivot. This has the added advantage that it removes the unknown force $\vec{F}_p$ from consideration because the torque of a force that passes through the pivot is zero. So the only force that generates a torque about the pivot is the weight $m g$:
+   \beq
+      \tau = m g l \sin(\theta)
+   \eeq
+
+   The effect of this torque is to produce angular acceleration according the Newton's Second Law of Motion:
+   \beq
+      \tau = I \alpha
+   \eeq
+   where $I$ is the Moment of Inertia of the bar about the pivot and $\alpha = \frac{d^2 \theta}{dt^2}$ is its angular acceleration.
+
+   \vspace{\baselineskip} 
+   The next step is to calculate the Moment of Inertia $I$ of the bar about the pivot for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
+   \beq
+      I = I_{CM} + m \, l^2
+   \eeq
+   where $I_{CM}$ is the moment of inertia of the bar about its center of mass and $l$ is the distance from the pivot to the center of mass. In turn, $I_{CM}$ is calculated by considering the bar to have negligible width and uniform mass distribution.
+   \beq
+      I_{CM} = \frac{1}{12} \, m \, L^2
+   \eeq
+   where $L$ is the total length of the bar.
