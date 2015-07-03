@@ -8,7 +8,7 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
 
 \section{Experimental Setup}
 
-   The experimental equipment consists of a thin uniform metallic bar with holes/slots placed through it at regular intervals. By allowing the bar to swing from different slots one can change the Moment of Inertia and consequently the Time Period of oscillations.
+   The experimental equipment consists of a thin uniform metallic bar with holes/slots placed through it at regular intervals. By allowing the bar to swing from different slots one can change the moment of inertia and consequently the Time Period of oscillations.
 
    \begin{center}
       \input{diag/setup}        % Include tex code for the diagram of the experimental setup
@@ -24,25 +24,28 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
       \input{diag/freebody}
    \end{center}
 
-   There are two forces acting on the bar. Its weight, which acts at the bar's center of mass/gravity, and a force of unknown magnitude and direction acting at the pivot, $\vec{F}_p$. We are interested in calculating $\theta(t)$ so we focus on the rotation of the bar about the pivot and calculate torque. Since the unknown force $\vec{F}_p$ acts at the pivot its torque about the pivot is zero (moment-arm has zero length). Therefore only the weight $m g$ appears in our calculations.
-
-   Since we are only interested in the angle $\theta$ that represents the rotation of the bar about the pivot we calculate the torque about the pivot. This has the added advantage that it removes the unknown force $\vec{F}_p$ from consideration because the torque of a force that passes through the pivot is zero. So the only force that generates a torque about the pivot is the weight $m g$:
+   There are two forces acting on the bar. Its weight, which acts at the bar's center of mass/gravity, and a force of unknown magnitude and direction acting at the pivot, $\vec{F}_p$.
+   
+\section{Derivation}
+   
+   We are interested in calculating $\theta(t)$ so we focus on the rotation of the bar about the \textbf{pivot} and calculate torque. Since the unknown force $\vec{F}_p$ acts at the pivot, its torque about the pivot is zero (moment-arm has zero length). Therefore only the weight $m g$ appears in our calculations. The torque is given by
    \beq
-      \tau = m g l \sin(\theta)
+      \tau = - m g l \sin(\theta)
    \eeq
+   where the negative sign denotes the fact that the rotational direction of the torque is always opposite to that of the angle. For instance in the free-body diagram the angle $\theta$ is counter-clockwise while the torque exerted by the weight is in the clockwise direction.
 
    The effect of this torque is to produce angular acceleration according the Newton's Second Law of Motion:
    \beq
       \tau = I \alpha
    \eeq
-   where $I$ is the Moment of Inertia of the bar about the pivot and $\alpha = \frac{d^2 \theta}{dt^2}$ is its angular acceleration.
+   where $I$ is the moment of inertia of the bar about the pivot and $\alpha = \frac{d^2 \theta}{dt^2}$ is its angular acceleration.
 
    \vspace{\baselineskip} 
-   The next step is to calculate the Moment of Inertia $I$ of the bar about the pivot for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
+   The next step is to calculate $I$ for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
    \beq
       I = I_{CM} + m \, l^2
    \eeq
-   where $I_{CM}$ is the moment of inertia of the bar about its center of mass and $l$ is the distance from the pivot to the center of mass. In turn, $I_{CM}$ is calculated by considering the bar to have negligible width and uniform mass distribution.
+   where $I_{CM}$ is the moment of inertia of the bar about its center of mass and $l$ is the distance from the pivot to the center of mass. In turn, $I_{CM}$ is calculated by considering the bar to have negligible width and uniform mass distribution, in which case the moment of inertia is known to be given by:
    \beq
       I_{CM} = \frac{1}{12} \, m \, L^2
    \eeq
