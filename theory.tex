@@ -29,24 +29,55 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
 \section{Derivation}
    
    We are interested in calculating $\theta(t)$ so we focus on the rotation of the bar about the \textbf{pivot} and calculate torque. Since the unknown force $\vec{F}_p$ acts at the pivot, its torque about the pivot is zero (moment-arm has zero length). Therefore only the weight $m g$ appears in our calculations. The torque is given by
-   \beq
+   \beq \label{tau_weight}
       \tau = - m g l \sin(\theta)
    \eeq
    where the negative sign denotes the fact that the rotational direction of the torque is always opposite to that of the angle. For instance in the free-body diagram the angle $\theta$ is counter-clockwise while the torque exerted by the weight is in the clockwise direction.
 
    The effect of this torque is to produce angular acceleration according the Newton's Second Law of Motion:
-   \beq
+   \beq \label{tau_alpha}
       \tau = I \alpha
    \eeq
-   where $I$ is the moment of inertia of the bar about the pivot and $\alpha = \frac{d^2 \theta}{dt^2}$ is its angular acceleration.
+   %
+   \newcommand{\dTtheta}{\ensuremath{\frac{d^2 \theta}{dt^2}}}
+   %
+   where $I$ is the moment of inertia of the bar about the pivot and $\alpha = \dTtheta$ is its angular acceleration. Note that since $I$ is calculated about the pivot it is a function of the distance $l$.
 
    \vspace{\baselineskip} 
-   The next step is to calculate $I$ for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
-   \beq
+   Substituting equations \eqref{tau_weight} and $\alpha = \dTtheta$ into \eqref{tau_alpha}:
+   %
+   \beqcn
+      \tau = I \alpha\\
+      \imply - m g l \sin(\theta) = I \alpha\\
+      \imply \alpha = - \frac{m g l}{I} \sin(\theta)\\
+      \imply \dTtheta = - \frac{m g l}{I} \sin(\theta)\\
+   \eeqcn
+
+   This is a differential equation which needs to be solved for the function $\theta(t)$. In its current form it has no analytical solution. However if we limit the system to small angles $\theta \ll 1$, that is only allow small-angle oscillations (small amplitude) we can make the approximation 
+   \beqn
+      \theta \ll 1 \imply \sin(\theta) \approx \theta
+   \eeqn
+   which transforms the differential equation in to
+   \beq \label{diffeqn}
+      \dTtheta = - \frac{m g l}{I} \theta
+   \eeq
+
+   This differential equation has the well-known form $\frac{d^2 x}{dt^2} = - \omega^2 x$ with the equally well-known solution $x(t) = x_0 \sin(\omega t + \phi)$. $\omega = \frac{2 \pi}{T}$ is the angular frequency of the system while $T$ is its time period. Thus by simply inspecting \eqref{diffeqn} we can conclude
+   \beqc
+      \omega^2 = \frac{m g l}{I}\\
+      \imply \big( \frac{2 \pi}{T} \big)^2 = \frac{m g l}{I}\\
+      \imply T = 2 \pi \sqrt{\frac{I}{m g l}}
+   \eeqc
+
+
+
+   The final step is to calculate $I$ for a given value of $l$. For this we use the parallel axis theorem. If the mass of the bar is $m$ then $I$ is given by
+   \beq \label{parallel_axis}
       I = I_{CM} + m \, l^2
    \eeq
    where $I_{CM}$ is the moment of inertia of the bar about its center of mass and $l$ is the distance from the pivot to the center of mass. In turn, $I_{CM}$ is calculated by considering the bar to have negligible width and uniform mass distribution, in which case the moment of inertia is known to be given by:
-   \beq
+   \beq \label{ICM}
       I_{CM} = \frac{1}{12} \, m \, L^2
    \eeq
    where $L$ is the total length of the bar.
+
