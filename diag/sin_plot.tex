@@ -1,0 +1,25 @@
+   \begin{center}
+      \begin{tikzpicture}
+
+         \begin{axis}[
+            width = 0.8\textwidth,
+            height = 15\baselineskip,
+            trig format plots=rad, 
+            ticks = none,
+            axis lines= middle, 
+            xlabel=$t$, 
+            every axis x label/.style={at={(current axis.right of origin)}, anchor=north},
+            every axis y label/.style={at={(current axis.north west)}, anchor=east},
+            ylabel=$x(t)$, 
+            title={$x_0 \sin(\omega t + \phi)$}, 
+            ymin = -1.2, 
+            ymax = 1.2]
+
+            \def\dx{0.8}
+            
+            \addplot[domain=-0:7*pi, samples=500, thick]{sin(x - \dx)};
+            \draw[|<->|] (axis cs: 0.5*pi + \dx, 1.1) -- node[fill=white]{$T$} (axis cs: 2.5*pi + \dx, 1.1);
+
+         \end{axis}
+      \end{tikzpicture}
+   \end{center}
