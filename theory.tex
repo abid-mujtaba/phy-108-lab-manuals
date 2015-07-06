@@ -2,11 +2,11 @@
 
 A compound pendulum (also known as a physical pendulum) consists of a \textbf{rigid} body oscillating about a pivot. This experiment uses a uniform metallic bar with holes/slots cut down the middle at regular intervals. The bar can be hung from any one of these holes allowing us to change the location of the pivot.
 
-\section{Objective}
+\section*{Objective}
 
 Derive an equation for the time period $T$ of the oscillations of a uniform metallic bar suspended from a pivot passing through it.
 
-\section{Experimental Setup}
+\section*{Experimental Setup}
 
    The experimental equipment consists of a thin uniform metallic bar with holes/slots placed through it at regular intervals. By allowing the bar to swing from different slots one can change the moment of inertia and consequently the Time Period of oscillations.
 
@@ -16,7 +16,7 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
 
    We define the total length of the bar as $L$ and the distance from the pivot to the center of mass (CM) of the bar to be $l$ as indicated in the diagram above. The position of the bar at any instant of time is given by the angle $\theta$. When allowed to swing the bar performs an approximation of simple harmonic motion, that is, the angle $\theta$ varies in a cyclic fashion with time period $T$.
 
-\section{Free-Body Diagram}
+\section*{Free-Body Diagram}
 
    To calculate the time period $T$ one has to derive the equation of motion $\theta(t)$, namely how the angle $\theta$ varies as a function of time $t$. The first step, as always, is drawing the extended free body diagram of the system (extended because we are dealing with a rotational system and therefore the distance from the pivot is significant).
 
@@ -26,7 +26,7 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
 
    There are two forces acting on the bar. Its weight, which acts at the bar's center of mass/gravity, and a force of unknown magnitude and direction acting at the pivot, $\vec{F}_p$.
    
-\section{Derivation}
+\section*{Derivation}
    
    We are interested in calculating $\theta(t)$ so we focus on the rotation of the bar about the \textbf{pivot} and calculate torque. Since the unknown force $\vec{F}_p$ acts at the pivot, its torque about the pivot is zero (moment-arm has zero length). Therefore only the weight $m g$ appears in our calculations. The torque is given by
    \beq \label{tau_weight}
@@ -69,7 +69,7 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
    \vspace{0.5\baselineskip}
    
    By simply inspecting \eqref{diffeqn} and comparing with the general form $\frac{d^2 x}{dt^2} = - \omega^2 x$ we can conclude that
-   \beqc
+   \beqc \label{T_I}
       \omega^2 = \frac{m g l}{I}\\
       \imply \big( \frac{2 \pi}{T} \big)^2 = \frac{m g l}{I}\\
       \imply T = 2 \pi \sqrt{\frac{I}{m g l}}
@@ -87,3 +87,12 @@ Derive an equation for the time period $T$ of the oscillations of a uniform meta
    \eeq
    where $L$ is the total length of the bar.
 
+   Substituting \eqref{parallel_axis} and \eqref{ICM} in to \eqref{T_I}
+   \beqc
+      T = 2 \pi \sqrt{\frac{I}{m g l}}\\
+      \imply T = 2 \pi \sqrt{\frac{I_{CM} + m \, l^2}{m g l}}\\
+      \imply T = 2 \pi \sqrt{\frac{\frac{1}{12} \, m \, L^2 + m \, l^2}{m g l}}\\
+      \imply T = 2 \pi \sqrt{\frac{L^2 + 12 l^2}{12 g l}}
+   \eeqc
+
+   Thus we achieve our objective by deriving an equation that relates the time period $T$ of a compound pendulum to its physical characteristics, mainly its total length $L$ and the distance $l$ from the pivot to the bar's center of mass, and to the acceleration of gravity.
