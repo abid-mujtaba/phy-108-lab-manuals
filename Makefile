@@ -9,7 +9,7 @@ FILE = manual.pdf			# The generated pdf file
 # If mupdf is not running then we simply launch mupdf to show manual.pdf
 
 ifneq (, $(shell which evince 2> /dev/null))		# We run 'which evince' to confirm that evince is present
-	CMD = evince $(FILE)
+	CMD = evince $(FILE) &
 else
 ifneq (, $(shell which mupdf 2> /dev/null))
 ifneq (, $(shell ps -A | grep mupdf && wmctrl -l | grep $(FILE)))
