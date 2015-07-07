@@ -23,7 +23,7 @@ endif
 endif
 
 
-.PHONY: all 
+.PHONY: all, clean
 
 # Since this is the first target it will be run if only 'make' is executed
 all: manual.pdf					# We make the manual.pdf target a pre-req of 'all'. The first step is it will check if that target needs to be executed.
@@ -32,3 +32,7 @@ all: manual.pdf					# We make the manual.pdf target a pre-req of 'all'. The firs
 # If any *.tex file is changed we compile again to create the pdf file
 manual.pdf: *.tex */*.tex *.sty
 	pdflatex manual.tex
+
+# Remove all generated files
+clean:
+	rm *.pdf *.aux *.log
