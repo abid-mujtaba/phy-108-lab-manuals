@@ -33,6 +33,10 @@ all: manual.pdf					# We make the manual.pdf target a pre-req of 'all'. The firs
 manual.pdf: *.tex */*.tex *.sty
 	pdflatex manual.tex
 
+# Compile the tex file
+compile:
+	pdflatex manual.tex
+
 # Remove all generated files
 clean:
 	rm *.pdf *.aux *.log
