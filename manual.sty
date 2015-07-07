@@ -1,3 +1,21 @@
+% We define all style related instructions for formating Lab Manuals inside this package
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{manual}[2015/06/07]
+
+% Declare all the packages used
+
+\usepackage[margin=0.75in]{geometry}        % Specify the margins of the page
+\usepackage[parfill]{parskip}               % By default new paragraphs will NOT have indentation on the first line.
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tikz-dimline}           % Allows one to draw dimension lines in a diagram. Package cloned from https://github.com/abid-mujtaba/tikz-dimline edited slightly and placed in ~/texmf/tex/latex/.
+\usepackage{tikz-helpgrid}          % Allows one to draw a light-colored grid over the diagram for aiding in element placement
+
+
+
 % We provide definition of commands that are used in all Lab Manuals
 
 \makeatletter       % We use this command because we want to refer to variables in our definition that contain the character @
