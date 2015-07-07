@@ -1,3 +1,6 @@
+%&manual
+% The line above is used to indicate to the compiler that the pre-compiled preamble be used if it is available (a manual.fmt file will be searched for)
+
 \documentclass{article}
 
 \usepackage{manual}     % Simply include the package created specifically for lab manuals
@@ -8,6 +11,8 @@
 \course{PHYS - 108}
 \experimentnumber{9}
 \title{Compound Pendulum}
+
+\csname endofdump\endcsname     % This indicates the end of the "static" part of the preamble which is pre-compiled and placed in the manual.fmt file to speed up compilation.
 
 
 \begin{document}

@@ -23,7 +23,7 @@ endif
 endif
 
 
-.PHONY: all, clean
+.PHONY: all, clean, preamble
 
 # Since this is the first target it will be run if only 'make' is executed
 all: manual.pdf					# We make the manual.pdf target a pre-req of 'all'. The first step is it will check if that target needs to be executed.
@@ -40,3 +40,7 @@ compile:
 # Remove all generated files
 clean:
 	rm *.pdf *.aux *.log
+
+# Pre-compile the preamble to speed up compilation
+preamble:
+	pdftex -ini -jobname="manual" "&pdflatex" mylatexformat.ltx manual.tex
