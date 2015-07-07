@@ -26,21 +26,25 @@ endif
 .PHONY: all, clean, preamble
 
 # Since this is the first target it will be run if only 'make' is executed
-all: manual.pdf					# We make the manual.pdf target a pre-req of 'all'. The first step is it will check if that target needs to be executed.
+all: manual.pdf			# We make the manual.pdf target a pre-req of 'all'. The first step is it will check if that target needs to be executed.
 	$(CMD)
 
-# If any *.tex file is changed we compile again to create the pdf file
-manual.pdf: *.tex */*.tex *.sty
-	pdflatex manual.tex
+# If any *.tex file is changed we compile again to create the pdf file. Use the -shell-escape option required for Tikz image externalization.
+manual.pdf: *.tex */*.tex manual.fmt
+	pdflatex -shell-escape manual.tex
 
-# Compile the tex file
+manual.fmt:	manual.sty manual.tex
+	make preamble
+
+# Compile the tex file.
 compile:
-	pdflatex manual.tex
+	pdflatex -shell-escape manual.tex
 
 # Remove all generated files
 clean:
-	rm *.pdf *.aux *.log
+	rm *.pdf *.aux *.log *.dpth *.md5 *.auxlock
 
 # Pre-compile the preamble to speed up compilation
+# Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
 preamble:
 	pdftex -ini -jobname="manual" "&pdflatex" mylatexformat.ltx manual.tex

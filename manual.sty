@@ -15,6 +15,11 @@
 \usepackage{tikz-helpgrid}          % Allows one to draw a light-colored grid over the diagram for aiding in element placement
 
 
+% Tikz commands for externalizing images. This speeds up compilation.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=build/]        % Activate image externalization
+
+
 
 % We provide definition of commands that are used in all Lab Manuals
 
