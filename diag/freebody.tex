@@ -1,46 +1,49 @@
-\begin{tikzpicture}
+\tikzsetnextfilename{freebody}      % We set the filename which will be used for the pdf created by the externalize library. The prefix is still applicable so build/freebody.pdf will be created
+\begin{center}
+   \begin{tikzpicture}
 
-   %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
-   
-   \def\b{-5.5}         % Variable containing the position of the bottom of the bar
-   \def\hw{0.2cm}       % Half-width of the bar
-   \def\r{0.05}         % Radius of the pin-hole circles in the bar
-   \def\cy{-2.25}       % Vertical position of center of bar
+      %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
+      
+      \def\b{-5.5}         % Variable containing the position of the bottom of the bar
+      \def\hw{0.2cm}       % Half-width of the bar
+      \def\r{0.05}         % Radius of the pin-hole circles in the bar
+      \def\cy{-2.25}       % Vertical position of center of bar
 
-   \coordinate (cm) at (-120:-\cy);       % Location of center of mass after rotation
+      \coordinate (cm) at (-120:-\cy);       % Location of center of mass after rotation
 
-   \draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
+      \draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
 
-   \draw [rotate around={-30:(0,0)}]      % Rotate the following constructed object (bar with holes) about the origin by -30 degrees
+      \draw [rotate around={-30:(0,0)}]      % Rotate the following constructed object (bar with holes) about the origin by -30 degrees
 
-      (0,1) -- (0,\b)       % The thick line representing the bar
+         (0,1) -- (0,\b)       % The thick line representing the bar
 
-      [thick, fill]                     % These attributes will be applied to the circles that follow
-      (0,0) circle [radius=\r]          % Draw a thick point to represent the pivot
-      (0,\cy) circle [radius=\r]        % Draw a thick point to represent the Center of Mass
-   ;
+         [thick, fill]                     % These attributes will be applied to the circles that follow
+         (0,0) circle [radius=\r]          % Draw a thick point to represent the pivot
+         (0,\cy) circle [radius=\r]        % Draw a thick point to represent the Center of Mass
+      ;
 
-   % Show angle theta using an arc with an arrow
-   \def\ar{0.75}         % Radius of arc used to define angle
-   \draw [->,>=stealth] (0, -\ar) arc (-90:-120:\ar);           % Draw an arc with an arrow at the end for the angle
-   \draw (-105:\ar+0.25) node {$\theta$};                       % Note the use of polar coordinates to place the variable theta
+      % Show angle theta using an arc with an arrow
+      \def\ar{0.75}         % Radius of arc used to define angle
+      \draw [->,>=stealth] (0, -\ar) arc (-90:-120:\ar);           % Draw an arc with an arrow at the end for the angle
+      \draw (-105:\ar+0.25) node {$\theta$};                       % Note the use of polar coordinates to place the variable theta
 
-   \dimline[offset = -0.5cm, show extensions = false]{(cm)}{(0,0)}{$l$};
+      \dimline[offset = -0.5cm, show extensions = false]{(cm)}{(0,0)}{$l$};
 
-   % Draw weight vector
-   \draw [->] (cm) -- ++ (0,-2);
-   \draw (cm) ++ (0,-2.25) node {$m g$};
+      % Draw weight vector
+      \draw [->] (cm) -- ++ (0,-2);
+      \draw (cm) ++ (0,-2.25) node {$m g$};
 
-   % Draw arc and angle theta between weight vector and rod
-   \draw [->,>=stealth] (cm) ++ (0,-\ar) arc (-90:-120:\ar);
-   \draw (cm) ++ (-105:\ar+0.25) node {$\theta$};
+      % Draw arc and angle theta between weight vector and rod
+      \draw [->,>=stealth] (cm) ++ (0,-\ar) arc (-90:-120:\ar);
+      \draw (cm) ++ (-105:\ar+0.25) node {$\theta$};
 
-   % Draw pivot forces
-   \draw [->,>=stealth] (0,0) -- (1,0);
-   \draw (1.3, 0) node {$F_{p x}$};
+      % Draw pivot forces
+      \draw [->,>=stealth] (0,0) -- (1,0);
+      \draw (1.3, 0) node {$F_{p x}$};
 
-   \draw [->,>=stealth] (0,0) -- (0,1);
-   \draw (0, 1.3) node [fill=white] {$F_{p y}$};
-   
+      \draw [->,>=stealth] (0,0) -- (0,1);
+      \draw (0, 1.3) node [fill=white] {$F_{p y}$};
+      
 
-\end{tikzpicture}
+   \end{tikzpicture}
+\end{center}
