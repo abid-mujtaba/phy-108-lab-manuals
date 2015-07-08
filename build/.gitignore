@@ -1,0 +1,7 @@
+# This folder contains generated files.
+# pdflatex needs this directory to exist for tikz externalization to work
+
+# Ignore everything in this directory
+*
+# except for the gitignore
+!.gitignore

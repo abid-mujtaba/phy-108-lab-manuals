@@ -4,5 +4,3 @@ manual.pdf
 *.auxlock
 *.log
 *.fmt
-
-build/
