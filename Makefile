@@ -42,7 +42,7 @@ compile:
 
 # Remove all generated files
 clean:
-	rm *.pdf *.aux *.log *.dpth *.md5 *.auxlock
+	rm -f *.pdf *.aux *.log *.auxlock build/*.pdf build/*.log build/*.dpth
 
 # Pre-compile the preamble to speed up compilation
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
