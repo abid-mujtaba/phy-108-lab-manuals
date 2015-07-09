@@ -25,6 +25,7 @@ endif
 
 .PHONY: all, clean, preamble
 
+
 # Since this is the first target it will be run if only 'make' is executed
 # The only dependency is manual.pdf since that is the file we want to create and view
 # make first looks at the 'manual.pdf' target, processes it and then runs the $(CMD) after it regardless of if 'manual.pdf' is required
@@ -38,8 +39,8 @@ all: manual.pdf			# We make the manual.pdf target a pre-req of 'all'. The first 
 #
 # If any *.tex file is changed we compile again to create the pdf file.
 # manual.fmt is a dependecy. If manual.sty or manual.tex is changed manual.fmt will need to be recreated and so the command for manual.pdf will be run as well but after the processing for manual.fmt is complete. 
-# Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency
-manual.pdf: *.tex build/*.pdf manual.fmt
+# Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency. We use $(wildcard build/*.pdf) to create the list of pdfs in build/ since it will evaluate to empty if none are found. Using build/*.pdf directly as a dependency causes errors when no pdfs exist in build. 
+manual.pdf: *.tex $(wildcard build/*.pdf) manual.fmt
 	pdflatex -shell-escape manual.tex
 
 # We use patterns here.
