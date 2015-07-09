@@ -1,0 +1,29 @@
+%&manual
+% The line above is used to indicate to the compiler that the pre-compiled preamble be used if it is available (a manual.fmt file will be searched for)
+
+\documentclass{article}
+
+\usepackage{manual}     % Simply include the package created specifically for lab manuals
+
+\renewcommand{\arraystretch}{1.5}
+
+% Define the variables that are required for generating the title of the document
+\course{Dummy Course}
+\experimentnumber{0}
+\title{Dummy Experiment}
+
+\csname endofdump\endcsname     % This indicates the end of the "static" part of the preamble which is pre-compiled and placed in the manual.fmt file to speed up compilation.
+
+
+\begin{document}
+
+   \maketitle
+
+   \input{theory}
+
+   \newpage
+   \maketitle           % Generate the title using the customized command defined in manual-defs.tex
+
+   \input{experiment}
+
+\end{document}
