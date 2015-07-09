@@ -48,7 +48,7 @@ manual.pdf: *.tex build/*.pdf manual.fmt
 # We do that my deleting the corresponding pdf file using $@ which matches the whole target so 'build/<filename>.pdf'
 # By deleting the pdf file we force tikz externalization to recreate it because it won't find the pdf when it looks for it. An elegant solution to the complex inter-dependency of the tex and externalized tikz files.
 build/%.pdf: diag/%.tex
-	rm $@
+	rm -f $@
 
 # manual.fmt is created from manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
 manual.fmt:	manual.sty manual.tex
@@ -60,7 +60,7 @@ compile:
 
 # Remove all generated files
 clean:
-	rm -f *.pdf *.aux *.log *.auxlock build/*.pdf build/*.log build/*.dpth
+	rm -f *.pdf *.aux *.log *.auxlock manual.fmt build/*.pdf build/*.log build/*.dpth
 
 # Pre-compile the preamble to speed up compilation
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
