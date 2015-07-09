@@ -60,7 +60,7 @@ compile:
 
 # Remove all generated files
 clean:
-	rm -f *.pdf *.aux *.log *.auxlock manual.fmt build/*.pdf build/*.log build/*.dpth
+	rm -f *.pdf *.aux *.log *.auxlock manual.fmt build/*.pdf build/*.log build/*.dpth build/*.md5
 
 # Pre-compile the preamble to speed up compilation
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
