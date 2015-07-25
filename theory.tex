@@ -21,15 +21,43 @@ Viscosity is a property of fluids (liquids and gases) which determines how much 
 \section*{Derivation}
 
    The three forces acting on the falling sphere are given by
-   \beqc
+   \beqc \label{three_forces}
       W = m g\\
-      F_B = \rho \, V g\\
-      F_D = 6 \pi \eta r v\\
+      F_B = \sigma \, V g\\
+      F_D = 6 \pi \, \eta \, r v\\
    \eeqc
+   where $\sigma$ is the density of the fluid and the last equation is a statement of Stoke's Law which describes the drag force acting on a sphere of radius $r$ as it moves with velocity $v$ through a fluid with viscosity $\eta$.
 
-   The first two forces remain constant but the drag force increases in magnitude as the sphere speeds up since it is directly proportional to the velocity $v$. Initially, when the velocity of the sphere is low, the drag force is low as well and therefore the net downward force and acceleration are large. This causes the velocity to increase. As the velocity increases the drag force increases and in turn the net downward force and acceleration decrease. The velocity keeps increasing but at a slower rate. Eventually the drag force increases until it exactly balances the other two forces. The net downward force and acceleration become zero and the velocity becomes constant. This is known as the terminal velocity.
+   The first two forces remain constant but the drag force increases in magnitude as the sphere speeds up since it is directly proportional to the velocity $v$. Initially, when the velocity of the sphere is low, the drag force is low as well and therefore the net downward force and acceleration are large. This causes the velocity to increase. As the velocity increases the drag force increases and in turn the net downward force and acceleration decrease. The velocity keeps increasing but at a slower rate. Eventually the drag force increases until it exactly balances the other two forces. The net downward force and acceleration become zero and the velocity becomes constant. This is known as the terminal velocity $v_T$.
 
    Therefore, by definition, when the terminal velocity is achieved the net force on the sphere is zero, the three forces balance each other out. Looking at the free-body diagram this means
    \beq
       W = F_B + F_D
    \eeq
+   \def\stokes{6 \pi \, \eta \, r v_T}
+
+   Substituting \eqref{three_forces}
+   \beqn
+      \imply m g = \sigma \, V g + \stokes 
+   \eeqn
+
+   The mass of the sphere $m$ can be expressed in terms of the density $\rho$ of the sphere as $m = \rho V$.
+   \beqcn
+      \imply \rho V g = \sigma \, V g + \stokes\\
+      \imply \stokes = \rho V g - \sigma V g\\
+      \imply \stokes = (\rho - \sigma) V g
+   \eeqcn
+
+   The volume of a sphere is given by $V = \frac{4}{3} \pi r^3$. If the sphere (after attaining terminal velocity) falls through a distance $d$ in time $t$ the terminal velocity can be calculated using $v_T = \frac{d}{t}$. Substituting these in
+   \beqcn
+      \imply 6 \pi \, \eta \, r \frac{d}{t} = (\rho - \sigma) \frac{4}{3} \pi r^3 g\\
+      \imply 3 \, \eta \, \frac{d}{t} = \frac{2}{3} (\rho - \sigma) g \, r^2\\
+   \eeqcn
+
+   Since our aim is to calculate the viscosity of the fluid we make $\eta$ the subject of the equation giving us
+
+   \beq
+      \eta = \frac{4}{9} \frac{(\rho - \sigma) g \, r^2 t}{d}
+   \eeq
+
+   Thus we end up with an equation that relates the viscosity of a fluid to the radius of the sphere falling through it and the time it takes for it to fall through a certain distance. This equation governs the working of a \textbf{viscometer} a device where falling spheres are used to measure the viscosity of a fluid.
