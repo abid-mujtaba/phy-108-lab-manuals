@@ -67,6 +67,11 @@
 % A shortcut for place-holder text where diagram is needed
 \newcommand{\diag}{\vspace{\baselineskip}\begin{center}\textbf{INSERT DIAGRAM}\end{center}}
 
+% Command for formating table headers that contain units
+\newcommand{\tableHeader}[2]{$#1$ (#2)}
+
 % Shortcuts for units
-\newcommand{\cm}{\, \si{\centi \metre}}
-\renewcommand{\sec}{\, \si{\second}}
+\newcommand{\cm}{\si{\centi \metre}}
+\renewcommand{\sec}{\si{\second}}
+\newcommand{\gpss}{\si[per-mode=symbol]{\gram \per \cubic \centi \metre}}
+\newcommand{\cmpss}{\si[per-mode=symbol]{\centi\metre \per \second \squared}}
