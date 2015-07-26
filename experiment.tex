@@ -51,17 +51,34 @@
 
 \subsection*{Tabulation}
 
-   Record the constants in a table with the following format.
+   Record the position of the markers in a table with the following format. \textit{Don't forget to write down the units}.
 
    \begin{table}[h]
       \centering
 
-      \begin{tabular}{| c | c |}
+      \def\hs{\hspace{20pt}}
+      \begin{tabular}{| c | c | c |}
 
          \hline
-            \tableHeader{\sigma}{\gpss} & \tableHeader{g}{\cmpss}\\
+            \tableHeader{A}{\hs} & \tableHeader{B}{\hs} & \tableHeader{C}{\hs}\\
          \hline
-            & $981$\\
+            & & \\
+         \hline
+
+      \end{tabular}
+   \end{table}
+
+   Record the constants in a table with the following format. \textit{Pay close attention to the units of $d$}.
+
+   \begin{table}[h]
+      \centering
+
+      \begin{tabular}{| c | c | c |}
+
+         \hline
+            \tableHeaderW{50pt}{d}{\cm} & \tableHeaderW{50pt}{\sigma}{\gpss} & \tableHeaderW{50pt}{g}{\cmpss}\\
+         \hline
+            & & $981$\\
          \hline
 
       \end{tabular}
@@ -72,7 +89,13 @@
    \begin{table}[h]
       \centering
 
-      \begin{tabular}{| c | c | c |}
+      \begin{tabular}{| c | c | c | c |}
+
+         \hline
+            \tableHeaderW{30pt}{D}{\cm} & \tableHeaderW{30pt}{m}{\si{\gram}} & \tableHeaderW{30pt}{t_1}{\sec} & \tableHeaderW{30pt}{t_2}{\sec}\\
+         \hline
+            & & &\\
+         \hline
 
       \end{tabular}
    \end{table}
