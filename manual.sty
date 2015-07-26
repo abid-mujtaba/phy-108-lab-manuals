@@ -64,5 +64,25 @@
 
 \newcommand{\imply}{\,\, \Rightarrow \,\,}
 
+% A shortcut for place-holder text where diagram is needed
 \newcommand{\diag}{\vspace{\baselineskip}\begin{center}\textbf{INSERT DIAGRAM}\end{center}}
 
+% Custom environment for tables incorporating the standard setup. Using this one can simply use \begin{ctablet}{| c | c |} ... \cend{ctable}
+\newenvironment{ctable}{
+    \begin{table}[h]
+    \centering
+    \begin{tabular}
+    }{
+    \end{tabular}
+    \end{table}
+}
+
+% Command for formating table headers that contain units
+\newcommand{\tH}[2]{$#1$ (#2)}
+\newcommand{\tHW}[3]{\makebox[#1]{$#2$ (#3)}}      % We use a makebox to make the header have the specified width (#1)
+
+% Shortcuts for units
+\newcommand{\cm}{\si{\centi \metre}}
+\renewcommand{\sec}{\si{\second}}
+\newcommand{\gpcc}{\si[per-mode=symbol]{\gram \per \cubic \centi \metre}}
+\newcommand{\cmpss}{\si[per-mode=symbol]{\centi\metre \per \second \squared}}
