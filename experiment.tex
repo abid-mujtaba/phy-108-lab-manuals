@@ -69,32 +69,41 @@
 
    Record the constants in a table with the following format. \textit{Pay close attention to the units of $d$}.
 
-   \begin{ctable}{| c | c | c |}
+   {
+      \def\th{\tHW{50pt}}
 
-      \hline
-         \tHW{50pt}{d}{\cm} & \tHW{50pt}{\sigma}{\gpss} & \tHW{50pt}{g}{\cmpss}\\
-      \hline
-         & & $981$\\
-      \hline
+      \begin{ctable}{| c | c | c |}
 
-   \end{ctable}
+         \hline
+            \th{d}{\cm} & \th{\sigma}{\gpcc} & \th{g}{\cmpss}\\
+         \hline
+            & & $981$\\
+         \hline
+
+      \end{ctable}
+   }
 
 
    Record your observations in a table with the following format.
 
-   \begin{ctable}{| c | c | c | c |}
+   {
+      \def\th{\tHW{50pt}}
 
-      \hline
-         \tHW{30pt}{D}{\cm} & \tHW{30pt}{m}{\si{\gram}} & \tHW{30pt}{t_1}{\sec} & \tHW{30pt}{t_2}{\sec}\\
-      \hline
-         & & &\\
-      \hline
+      \begin{ctable}{| c | c | c | c |}
 
-   \end{ctable}
+         \hline
+            \th{D}{\cm} & \th{m}{\si{\gram}} & \th{t_1}{\sec} & \th{t_2}{\sec}\\
+         \hline
+            & & &\\
+         \hline
+
+      \end{ctable}
+   }
+   where $D$ is the diameter of the sphere, $t_1$ is the time it takes for the sphere to move from A to B, and $t_2$ is the time it takes for it to move from B to C.
 
 \subsection*{Constants}
 
-   The density of the glycerin $\sigma$ is written on its container (bottle). Note it down in $\gpss$. We also require the acceleration due to gravity. We will use the value $g = 981 \, \cmpss$
+   The density of the glycerin $\sigma$ is written on its container (bottle). Note it down in $\gpcc$. We also require the acceleration due to gravity. We will use the value $g = 981 \, \cmpss$
 
 \subsection*{Observation}
 
@@ -104,4 +113,31 @@
 
 \section*{Calculations}
 
-   Use your measurements to calculate and record the derived quantities in a table with the following format.
+   Use your measurements to calculate and record the derived quantities in a table with the following format
+
+   {
+      \def\th{\tHW{40pt}}       % Define the table header with fixed width for use in the table below
+
+      \begin{ctable}{| c || c | c | c || c |}
+
+         \hline
+            \th{D}{\cm} & \th{r}{\cm} & \th{\rho}{\gpcc} & \th{t}{\sec} & \th{\eta}{\hspace{20pt}} \\
+         \hline
+            & & & & \\
+         \hline
+
+      \end{ctable}
+   }
+   %
+   where
+   {
+      \def\vs{0.5\baselineskip}
+
+      \beqcn
+         r = \frac{D}{2}\\[\vs]
+         \rho = \frac{m}{V} = \frac{3 \, m}{4 \pi r^3}\\[\vs]
+         t = \frac{t_1 + t_2}{2}
+      \eeqcn
+   }
+
+   Use \eqref{main} to calculate both the values and \textbf{units} of $\eta$.
