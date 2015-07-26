@@ -53,11 +53,10 @@
 
    Record the position of the markers in a table with the following format. \textit{Don't forget to write down the units}.
 
-   \begin{table}[h]
-      \centering
-
+   {
       \def\hs{\hspace{20pt}}
-      \begin{tabular}{| c | c | c |}
+
+      \begin{ctable}{| c | c | c |}
 
          \hline
             \tableHeader{A}{\hs} & \tableHeader{B}{\hs} & \tableHeader{C}{\hs}\\
@@ -65,40 +64,33 @@
             & & \\
          \hline
 
-      \end{tabular}
-   \end{table}
+      \end{ctable}
+   }
 
    Record the constants in a table with the following format. \textit{Pay close attention to the units of $d$}.
 
-   \begin{table}[h]
-      \centering
+   \begin{ctable}{| c | c | c |}
 
-      \begin{tabular}{| c | c | c |}
+      \hline
+         \tableHeaderW{50pt}{d}{\cm} & \tableHeaderW{50pt}{\sigma}{\gpss} & \tableHeaderW{50pt}{g}{\cmpss}\\
+      \hline
+         & & $981$\\
+      \hline
 
-         \hline
-            \tableHeaderW{50pt}{d}{\cm} & \tableHeaderW{50pt}{\sigma}{\gpss} & \tableHeaderW{50pt}{g}{\cmpss}\\
-         \hline
-            & & $981$\\
-         \hline
+   \end{ctable}
 
-      \end{tabular}
-   \end{table}
 
    Record your observations in a table with the following format.
 
-   \begin{table}[h]
-      \centering
+   \begin{ctable}{| c | c | c | c |}
 
-      \begin{tabular}{| c | c | c | c |}
+      \hline
+         \tableHeaderW{30pt}{D}{\cm} & \tableHeaderW{30pt}{m}{\si{\gram}} & \tableHeaderW{30pt}{t_1}{\sec} & \tableHeaderW{30pt}{t_2}{\sec}\\
+      \hline
+         & & &\\
+      \hline
 
-         \hline
-            \tableHeaderW{30pt}{D}{\cm} & \tableHeaderW{30pt}{m}{\si{\gram}} & \tableHeaderW{30pt}{t_1}{\sec} & \tableHeaderW{30pt}{t_2}{\sec}\\
-         \hline
-            & & &\\
-         \hline
-
-      \end{tabular}
-   \end{table}
+   \end{ctable}
 
 \subsection*{Constants}
 
@@ -110,3 +102,6 @@
 
    Now drop the sphere in to the glycerin using the conical flask placed on top of the cylinder. Use two stop-watches to measure the time $t_1$ it takes to move from A to B and time $t_2$ it takes to move from B to C. Note these down in the table as well.
 
+\section*{Calculations}
+
+   Use your measurements to calculate and record the derived quantities in a table with the following format.
