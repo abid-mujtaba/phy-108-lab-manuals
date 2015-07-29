@@ -1,0 +1,18 @@
+\tikzsetnextfilename{freebody}      % We set the filename which will be used for the pdf created by the externalize library. The prefix is still applicable so build/freebody.pdf will be created
+\begin{center}
+   \begin{tikzpicture}
+
+      \def\r{0.5}
+      \def\h{1}
+
+      \draw 
+         (0,0) [thick] circle [radius=\r];
+
+      \draw [thick] (0, -\r) [->] -- ++ (0,-\h) node [below] {$W$};
+
+      \draw [thick] (45:\r) [->] -- ++ (0, \h) node [above] {$F_B$};
+
+      \draw [thick] (135:\r) [->] -- ++ (0, \h) node [above] {$F_D$}; 
+
+   \end{tikzpicture}
+\end{center}
