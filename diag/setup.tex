@@ -1,9 +1,13 @@
 \tikzsetnextfilename{setup}
 
+% Define the height of the cylinder. We define it outside because this is also used by the flask
+\def\Ch{5}
+
+% Define the cylinder as an embeddable drawing
 \newdrawing{\cylinder}{
 
       \def\hw{0.5}      % Half width of cylinder
-      \def\h{5}         % Height of Cylinder
+      \def\h{\Ch}         % Height of Cylinder
       \def\uw{0.2}      % Width of top-edge of cylinder
 
       \draw                         % Cylinder
@@ -16,45 +20,35 @@
       ;
 }
 
+% Define the conical flask
+\newdrawing{\flask}{
+
+   \def\chw{0.1}       % Half-width of lower column
+   \def\ch{0.75}           % Height of lower column
+
+   \def\thw{0.8}        % Half-width of the top of the slanting bit
+   \def\th{0.5}         % Height of the top of the slanting bit
+
+   \coordinate (ol) at (-\chw, 0);
+   \coordinate (or) at (\chw, 0);
+
+
+   % We will place the origin horizontally center and vertically where the slanting part meets the lower column
+   \draw
+      (ol) -- (-\chw, -\ch)
+      (or) -- (\chw, -\ch)
+
+      (ol) -- (-\thw, \th)
+      (or) -- (\thw, \th)
+   ;
+}
+
 
 \begin{center}
    \begin{tikzpicture}
 
       \cylinder
-
-      %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
-      
-      %\def\b{-5.5}         % Variable containing the position of the bottom of the bar
-      %\def\hw{0.2cm}       % Half-width of the bar
-      %\def\r{0.05}         % Radius of the pin-hole circles in the bar
-      %\def\cy{-2.25}       % Vertical position of center of bar
-
-      %\draw [dashed] (0,1) -- (0, \b);       % Dashed vertical line representing the equilibrium position. Note use of the variable \b
-
-      %\draw [rotate around={-30:(0,0)}]      % Rotate the following constructed object (bar with holes) about the origin by -30 degrees
-
-         %(-\hw, 1) rectangle (\hw, \b)       % The rectangle representing the outline of the order
-
-         %\foreach \y in {0.75,0,...,\b}      % We use a foreach loop to draw the circles on the bar placing them 0.75 units apart with one at the pivot
-            %{(0,\y) circle [radius=\r]}      % The foreach loop variable \y is used to position the center of the circles
-
-         %(-\hw, \cy) -- (-\r, \cy)       % Horizontal marker for Center of Mass which consists of lines on either side of the pin-hole (circle)
-         %(\r, \cy) -- (\hw, \cy)
-
-         %(\hw+0.05, \cy-0.2) node[right] {CM}
-      %;
-
-      %\draw [thick] (0,0) circle [radius=\r];          % Draw a thicker circle to represent the pivot
-
-      %% Show angle theta using an arc with an arrow
-      %\def\ar{1}         % Radius of arc used to define angle
-      %\draw [->,>=stealth] (0, -\ar) arc (-90:-120:\ar);           % Draw an arc with an arrow at the end for the angle
-      %\draw (-100:\ar+0.25) node {$\theta$};                       % Note the use of polar coordinates to place the variable theta
-
-      %\draw (\hw+0.1, 0) node[right] {pivot};          % Place label "pivot" next to the pivot
-
-      %\dimline[offset = -0.5cm, delta=\hw]{(-120:-\cy)}{(0,0)}{$l$};
-      %\dimline[offset = -1cm, delta=\hw]{(-120:-\b)}{(60:1)}{$L$};
+      \flask[yshift=\Ch-0.1]    % Place flask with its anchor (origin) just below the top of the cylinder
 
    \end{tikzpicture}
 \end{center}
