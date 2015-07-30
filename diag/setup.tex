@@ -57,6 +57,10 @@
       % So [shift=(-60:\ar)] applied to the coordinates of the center gives the starting position.
       % The second part containing the start and end angles and the radius of the arc are straight-forward
       \draw ([shift=(-60:\ar)] 0,\Ch) arc (-60:-120:\ar);
+      
+      \def\sr{0.05}
+      \draw (0,2.5) circle [radius=\sr];       % The falling sphere
+      \draw [->] (0,2.5-\sr) -- (0,2.2);
 
    \end{tikzpicture}
 \end{center}
