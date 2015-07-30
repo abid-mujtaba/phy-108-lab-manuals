@@ -1,11 +1,13 @@
 \tikzsetnextfilename{setup_theory}
 
-\input{diag/setup_defs}
+{           % We use braces to confine the namespace and avoid conflict since we import diag/setup_defs in setup_experiment as well
+   \input{diag/setup_defs}
 
-\begin{center}
-   \begin{tikzpicture}
+   \begin{center}
+      \begin{tikzpicture}
 
-      \input{diag/setup_base}
+         \input{diag/setup_base}
 
-   \end{tikzpicture}
-\end{center}
+      \end{tikzpicture}
+   \end{center}
+}

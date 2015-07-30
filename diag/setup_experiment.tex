@@ -1,0 +1,30 @@
+\tikzsetnextfilename{setup_experiment}
+
+{
+   \input{diag/setup_defs}
+
+   \begin{center}
+      \begin{tikzpicture}
+
+         \input{diag/setup_base}
+
+         \coordinate (lA) at (-\Chw, 3.25);
+         \coordinate (lB) at (-\Chw, 1.75);
+         \coordinate (lC) at (-\Chw, 0.25);
+
+         \coordinate (cw) at (2 * \Chw, 0);
+
+         % The three markers
+         \draw [gray, text=black]           % The lines will be gray while the text will be black
+            (lA) -- ++ (cw) node [right] {A}
+            (lB) -- ++ (cw) node [right] {B}
+            (lC) -- ++ (cw) node [right] {C}
+         ;
+
+         % Dimension lines for the distance 'd'
+         \dimline[offset=-0.3, show extensions=false]{(lB)}{(lA)}{$d$}
+         \dimline[offset=-0.3, show extensions=false]{(lC)}{(lB)}{$d$}
+
+      \end{tikzpicture}
+   \end{center}
+}
