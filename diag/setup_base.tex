@@ -1,0 +1,16 @@
+% The common drawing instructions for the two setup diagrams
+
+\cylinder
+\flask[yshift=\Ch-0.1]    % Place flask with its anchor (origin) just below the top of the cylinder
+
+\def\ar{1}                % Draw the miniscus of the glycerin
+% To draw an arc with center (0, \Ch), radius \ar and starting and ending angles -60 to -120 we use the 'shift' option.
+% The arc command uses a starting point and then angles and radius and NOT the center
+% To overcome this we define the starting point as the center shifted to the starting point using polar coordinates. The ability to shift using polar coordinates is very useful here.
+% So [shift=(-60:\ar)] applied to the coordinates of the center gives the starting position.
+% The second part containing the start and end angles and the radius of the arc are straight-forward
+\draw ([shift=(-60:\ar)] 0,\Ch) arc (-60:-120:\ar);
+
+\def\sr{0.05}
+\draw (0,2.5) circle [radius=\sr];       % The falling sphere
+\draw [->] (0,2.5-\sr) -- (0,2.2);
