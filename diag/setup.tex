@@ -1,8 +1,8 @@
 \tikzsetnextfilename{setup}
 
-\newkeycommand{\cylinder}[scale=1,rotate=0]{
+\newkeycommand{\cylinder}[xshift=0,yshift=0,scale=1,rotate=0]{
    
-   \begin{scope}[scale=\commandkey{scale}, rotate=\commandkey{rotate}]
+   \begin{scope}[shift={(\commandkey{xshift}, \commandkey{yshift})}, scale=\commandkey{scale}, rotate=\commandkey{rotate}]
 
       \def\w{1}     % Width of Cylinder
       \def\h{5}     % Height of Cylinder
@@ -23,7 +23,12 @@
 \begin{center}
    \begin{tikzpicture}
 
-      \cylinder
+      \draw
+         (0,0) -- (5,0)
+         (0,0) -- (0,5)
+      ;
+
+      \cylinder[rotate=45, scale=0.5, xshift=1, yshift=2]
 
       %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
       
