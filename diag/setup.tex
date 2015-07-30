@@ -1,34 +1,26 @@
 \tikzsetnextfilename{setup}
 
-\newkeycommand{\cylinder}[xshift=0,yshift=0,scale=1,rotate=0]{
-   
-   \begin{scope}[shift={(\commandkey{xshift}, \commandkey{yshift})}, scale=\commandkey{scale}, rotate=\commandkey{rotate}]
+\newdrawing{\cylinder}{
 
-      \def\w{1}     % Width of Cylinder
-      \def\h{5}     % Height of Cylinder
+      \def\hw{0.5}      % Half width of cylinder
+      \def\h{5}         % Height of Cylinder
       \def\uw{0.2}      % Width of top-edge of cylinder
 
       \draw                         % Cylinder
-         (0,0) -- (0,\h)
-         (\w,0) -- (\w,\h)
-         (0,0) -- (\w,0)
+         (-\hw,0) -- (-\hw,\h)
+         (\hw,0) -- (\hw,\h)
+         (-\hw,0) -- (\hw,0)
 
-         (0,\h) -- (-\uw,\h)
-         (\w,\h) -- (\w + \uw,\h)
+         (-\hw,\h) -- (-\hw-\uw,\h)
+         (\hw,\h) -- (\hw + \uw,\h)
       ;
-
-   \end{scope}
 }
+
 
 \begin{center}
    \begin{tikzpicture}
 
-      \draw
-         (0,0) -- (5,0)
-         (0,0) -- (0,5)
-      ;
-
-      \cylinder[rotate=45, scale=0.5, xshift=1, yshift=2]
+      \cylinder
 
       %\helpgrid{-4}{-6}{3}{2}      % Draw a grid to help place objects. Comment out in final version.
       

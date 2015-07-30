@@ -87,3 +87,23 @@
 \renewcommand{\sec}{\si{\second}}
 \newcommand{\gpcc}{\si[per-mode=symbol]{\gram \per \cubic \centi \metre}}
 \newcommand{\cmpss}{\si[per-mode=symbol]{\centi\metre \per \second \squared}}
+
+% Custom command for generating drawings that can be placed where needed
+% This creates the \newdrawing command which in turn generates a \newkeycommand
+% The first argument to \newdrawing is the name of the command to be generated
+% The second argument is all of the \draw arguments that comprise the drawing
+% Note how we use \newkeycommand to introduct the shift, scale and rotate keys with sensible defaults
+% 
+% Example: \newdrawing{\cylinder}{<draw commands>} allows one to issue later on \cylinder[xhift=2,scale=0.5,rotate=45] which draws the object defined with \cylinder to be shifted, scaled and rotated as specified
+%
+% NOTE: The (0,0) coordinate of the drawing defined will serve as the anchor point of the defined object. All shifting, rotation and scaling will occur about this point so it should be defined with care
+
+\newcommand{\newdrawing}[2]{
+
+   \newkeycommand{#1}[xshift=0,yshift=0,scale=1,rotate=0]{
+      
+      \begin{scope}[shift={(\commandkey{xshift}, \commandkey{yshift})}, scale=\commandkey{scale}, rotate=\commandkey{rotate}]
+         #2
+      \end{scope}
+   }
+}
