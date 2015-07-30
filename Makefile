@@ -23,7 +23,7 @@ endif
 endif
 
 
-.PHONY: all, clean, preamble
+.PHONY: all, clean, preamble, fresh
 
 
 # Since this is the first target it will be run if only 'make' is executed
@@ -62,6 +62,11 @@ compile:
 # Remove all generated files
 clean:
 	rm -f *.pdf *.aux *.log *.auxlock manual.fmt build/*.pdf build/*.log build/*.dpth build/*.md5
+
+# Clean the environment before compiling the pdf afresh
+fresh:
+	make clean
+	make all
 
 # Pre-compile the preamble to speed up compilation
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
