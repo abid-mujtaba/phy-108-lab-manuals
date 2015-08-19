@@ -12,7 +12,12 @@ ifneq (, $(shell which evince 2> /dev/null))		# We run 'which evince' to confirm
 	CMD = evince $(FILE) &
 else
 ifneq (, $(shell which mupdf 2> /dev/null))
-ifneq (, $(shell ps -A | grep mupdf && wmctrl -l | grep $(FILE)))
+# We check that mupdf is running and that a window with $(FILE) in the title is present. Because of the peculiarity of make in that it cannot directly access the exit codes of shell commands we have to slightly round-about here.
+# We use ps -A and wmctrl to test for both conditions. We use > /dev/null to ensure that these commands do NOT print to stdout. We use && to ensure that both conditions must be met.
+# We use the || so that the 'echo' is executed only if the first two commands both fail. In that case the word "Fail" is printed to stdout.
+# The 'ifeq' tests if the output of the command is empty. If it is we simply refresh the mupdf window.
+# If "Fail" is printed the ifeq command fails and we launch the pdf using mupdf.
+ifeq (, $(shell ps -A | grep mupdf > /dev/null && wmctrl -l | grep $(FILE) > /dev/null || echo "Fail"))
 	CMD = @ echo "Refreshing mupdf" && wmctrl -R $(FILE) && xdotool key r
 else
 	CMD = @ echo "Launching mupdf" && mupdf $(FILE) &
