@@ -7,11 +7,24 @@
       % The draw=none option indicates that we do NOT want any stroke/border around the fill
       \tikzstyle{wall}=[fill,pattern=north east lines,minimum width=0.75cm,minimum height=0.3cm, draw=none]
 
+
+      % Define dimensions and angles
       \def\hw{0.25}     % Half width of the small wall segment on top
 
+      \def\angle{-120}  % Angle of string
+      \def\r{5}         % Radius of string
+
+      \def\br{0.1}      % Radius of bob
+
+
+      % Draw commands
       \draw (-\hw, 0) -- (\hw, 0);
       \draw [wall] (-\hw,0) rectangle (\hw,0.1);        % Draws a rectangle using the 'wall' pattern giving us the sloped lines
 
+      \draw (0,0) -- (\angle:\r);       % string
+      \draw [dashed] (0,0) -- (0,-\r);  % Dashed line down the middle
 
+      \draw (\angle:\r+\br) circle [radius=\br];
+      
    \end{tikzpicture}
 \end{center}
