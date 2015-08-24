@@ -12,11 +12,15 @@
       \def\hw{0.25}     % Half width of the small wall segment on top
 
       \def\angle{-120}  % Angle of string
-      \def\r{5}         % Radius of string
+      \def\r{2.5}         % Radius of string
 
       \def\br{0.1}      % Radius of bob
 
-      \def\ar{1.0}      % Radius of the arc that represents the angle
+      \def\ar{0.75}      % Radius of the arc that represents the angle
+
+
+      % Define coordinates used in the diagram
+      \coordinate (bc) at (\angle:\r+\br);          % Center of the bob
 
 
       % Draw commands
@@ -26,10 +30,20 @@
       \draw (0,0) -- (\angle:\r);       % string
       \draw [dashed] (0,0) -- (0,-\r);  % Dashed line down the middle
 
-      \draw (\angle:\r+\br) circle [radius=\br];        % The small circle representing the bob
+      \draw (bc) circle [radius=\br];        % The small circle representing the bob
 
+      % Arc and symbol for the angle at the pivot
       \draw [->,>=stealth] (0, -\ar) arc (-90:\angle:\ar);
-      \draw (-105:\ar+0.25) node {$\theta$};
+      \draw (-105:\ar+0.2) node {$\theta$};
+
+      % Draw the two forces
+      \draw [->,thick] (bc) -- ++(0,-1.25) node [below] {$W$};
+      \draw [->,thick] (bc) -- ++ (\angle+180:1) node [anchor=south east, yshift=-5] {$T$};
+
+      % Extend string using dashed line to show angle between vector W and the string
+      \draw [dashed] (bc) ++ (\angle:\br) -- ++ (\angle:1.5);
+      \draw [->] (bc) ++ (0,-0.5) arc (-90:\angle:0.5);
+      \draw (bc) ++ (-105:0.75) node {$\theta$};
 
    \end{tikzpicture}
 \end{center}
