@@ -1,0 +1,22 @@
+\tikzsetnextfilename{fbd2}
+\begin{center}
+   \begin{tikzpicture}
+
+      % Definitions
+      \def\angle{-120}  % Angle of string
+      \def\br{0.1}      % Radius of bob
+      \def\dh{1.5}      % Half-height of dashed line
+      \def\lT{2}        % Length of the T and W cos theta vectors
+
+      \coordinate (O) at (0,0);
+
+      % Draw commands
+      \draw (O) circle [radius=\br];
+      \draw [dashed] (0,\dh) -- (0,-\dh);
+
+      \draw [->, thick] (O) -- ++ (\angle:\lT) node [below] {$W \cos \theta$};
+      \draw [->, thick] (O) -- ++ (\angle+180:\lT) node [above] {$T$};
+      \draw [->, thick] (O) -- ++ (\angle+90:1.25) node [anchor=west] {$W \sin \theta$};
+
+   \end{tikzpicture}
+\end{center}
