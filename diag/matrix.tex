@@ -1,0 +1,42 @@
+% A matrix of pendulum images representing the various stages in the motion of a simple pendulum
+
+\tikzsetnextfilename{matrix}
+\begin{center}
+   \begin{tikzpicture}
+
+       \usetikzlibrary{patterns}
+    %    \usetikzlibrary{positioning}
+       % We define a tikz style which defines a fill pattern consisting of lines in the north east direction.
+       % The draw=none option indicates that we do NOT want any stroke/border around the fill
+       \tikzstyle{wall}=[fill,pattern=north east lines,minimum width=0.75cm,minimum height=0.3cm, draw=none]
+
+       % Define dimensions and angles
+       \def\r{2.5}
+       \def\hw{0.25}     % Half width of the small wall segment on top
+    %    \def\angle{-120}  % Angle of string
+       \def\br{0.1}      % Radius of bob
+       \def\ar{0.75}      % Radius of the arc that represents the angle
+
+       \newcommand{\pendulum}[2]{
+
+            \def\angle{#1}
+
+           % Define coordinates used in the diagram
+           \coordinate (bc) at (\angle:\r+\br);          % Center of the bob
+
+           % Draw commands
+           \draw (-\hw, 0) -- (\hw, 0);
+           \draw [wall] (-\hw,0) rectangle (\hw,0.1);        % Draws a rectangle using the 'wall' pattern giving us the sloped lines
+
+           \draw (0,0) -- (\angle:\r);       % string
+           \draw [dashed] (0,0) -- (0,-\r);  % Dashed line down the middle
+
+           \draw (bc) circle [radius=\br];        % The small circle representing the bo
+
+           \node at (-90:{\r + 1}) {#2};
+       }
+
+       \pendulum{-120}{At amplitude speed is zero.}
+
+   \end{tikzpicture}
+\end{center}
