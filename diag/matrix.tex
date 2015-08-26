@@ -14,6 +14,7 @@
        \def\hw{0.25}     % Half width of the small wall segment on top
        \def\br{0.1}      % Radius of bob
        \def\ar{0.75}      % Radius of the arc that represents the angle
+       \def\hsangle{30}        % Half angle of the arc through which the pendulum swings (on either side of the vertical)
 
        \newcommand{\pendulum}[3]
        {
@@ -38,6 +39,7 @@
            \fi
 
            \draw (bc) circle [radius=\br];        % The small circle representing the bo
+           \draw [black!60] (-90-\hsangle:\r+\br) arc (-90-\hsangle:-90+\hsangle:\r+\br);       % An arc representing the path of the bob
 
            % We branch based on the value of #2 (the length of the v vector passed in)
            % If #2 == 0cm then we do NOT draw the velocity vector
@@ -45,7 +47,7 @@
            % We use \lengthtest to compare possibly floating point values. Note the explicit 'cm' added after #2 to cast it as a length and not a number.
             \ifthenelse{\lengthtest{#2 cm = 0cm}}{}{
 
-                \draw [->] (bc) -- ++ (\angle+90:#2);       % The velocity vector is tangential to the string so we rotate the angle by 90 degrees by adding 90 to the angle
+                \draw [->, thick] (bc) -- ++ (\angle+90:#2);       % The velocity vector is tangential to the string so we rotate the angle by 90 degrees by adding 90 to the angle
             }
 
            \node [anchor=north, align=center, text width=4cm] at (-90:{\r + 0.35}) {#3};
