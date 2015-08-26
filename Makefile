@@ -77,3 +77,9 @@ fresh:
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
 preamble:
 	pdftex -ini -jobname="manual" "&pdflatex" mylatexformat.ltx manual.tex
+
+
+# We include the local.mk file which contains targets that are local/specific to each branch
+# We intend this Makefile to be common between all branches and all specificity to be contained in the local.mk file
+# The '-' before include tells 'make' to ignore errors in executing this command. Basically this will not complain if 'local.mk' is missing
+-include local.mk
