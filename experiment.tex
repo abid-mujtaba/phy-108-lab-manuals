@@ -42,7 +42,7 @@
     Record your data in a table with the following format.
 
     \begin{center}
-        \begin{tabular}{| c | c | c | c | c | c |}
+        \begin{tabular}{| c || c | c | c | c | c |}
 
             \hline
             $l$ (\si{\centi\metre}) & $t_{10_1}$ (\si{\second}) & $t_{10_2}$ (\si{\second}) & $t_{10_3}$ (\si{\second}) & $t_{10_4}$ (\si{\second}) & $t_{10_5}$ (\si{\second}) \\
@@ -58,3 +58,49 @@
     For each value of $l$ we will measure the time for 10 oscillations, five times, giving us the five $t_{10_i}$. This table consists of the measurements we take in the experiment. From these measured values we calculate other derived quantities which will allow us to achieve our objective of calculating the value of $g$.
 
     \textit{It is recommended that you observe and right down all of the measurements first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
+
+\subsection*{Observation}
+
+    Start with a length $l$ of $10$ \cm. Measure and record the five $t_{10_i}$, that is, measure the time for 10 oscillations five times. Then increase the value of $l$ by $10$ {\cm} and measure the five $t_{10_i}$ again.
+
+    Keep increasing the value of $l$ by $10$ {\cm} until the length of the string exceeds the height of the stand and you are no longer able to swing the pendulum (since the bob starts to touch the table top).
+
+\section*{Calculations}
+
+\subsection*{Linearizing the Equation}
+
+    The time period of the oscillations of a simple pendulum is given by equation \eqref{main}. This equation is not linear in the dependence of $T$ on $l$ since the variable $l$ appears inside a square root. To calculate the value of $g$ we must transform the equation in to a linear form which will allow us to plot a straight-line graph from the values we have measured.
+
+    To that end we simply square both sides of \eqref{main} giving us
+    %
+    \beq
+        T^2 = \frac{4 \pi^2}{g} l
+    \eeq
+
+    If we now consider the relationship between $T^2$ and $l$, it is linear. Compare this equation to that of the straight line $y = m x + c$ and you can immediately deduce that slope of the $T^2$ versus $l$ graph will be equal to
+    %
+    \beq
+        \text{slope} = \frac{4 \pi^2}{g}
+    \eeq
+    %
+    therefore we will be able to calculate the value of $g$ from the slope of the graph.
+
+\subsection*{Derived Quantities}
+
+    Use your measurements (recorded in the table above) to calculate and record the derived quantities in a table with the following format.
+
+    \begin{center}
+        \begin{tabular}{| c || c | c | c | c || c | c |}
+
+            \hline
+            \tHW{50pt}{l}{\cm} & \tHW{50pt}{\bar{t}_{10}}{\sec} & \tHW{50pt}{\Delta (t_{10})}{\sec} & \tHW{50pt}{T}{\sec} & \tHW{50pt}{\Delta (T)}{\sec} & \tHW{50pt}{T^2}{\si{\second \squared}} & \tHW{50pt}{\Delta (T^2)}{\si{\second \squared}} \\
+
+            \hline
+            & & & & & &\\
+            \hline
+
+        \end{tabular}
+    \end{center}
+    %
+    where $\bar{t}_{10}$ is the mean/average of the five $t_{10_i}$ given by
+    %
