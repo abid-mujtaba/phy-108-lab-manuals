@@ -5,7 +5,6 @@
    \begin{tikzpicture}
 
        \usetikzlibrary{patterns}
-    %    \usetikzlibrary{positioning}
        % We define a tikz style which defines a fill pattern consisting of lines in the north east direction.
        % The draw=none option indicates that we do NOT want any stroke/border around the fill
        \tikzstyle{wall}=[fill,pattern=north east lines,minimum width=0.75cm,minimum height=0.3cm, draw=none]
@@ -16,7 +15,8 @@
        \def\br{0.1}      % Radius of bob
        \def\ar{0.75}      % Radius of the arc that represents the angle
 
-       \newcommand{\pendulum}[3]{
+       \newcommand{\pendulum}[3]
+       {
             % #1: Angle of pendulum string from x-axis
             % #2: Length of velocity vector (in cm). Negative values will cause vectors to point from RTL
             % #3: Image caption (displayed at bottom)
@@ -31,7 +31,11 @@
            \draw [wall] (-\hw,0) rectangle (\hw,0.1);        % Draws a rectangle using the 'wall' pattern giving us the sloped lines
 
            \draw (0,0) -- (\angle:\r);       % string
-           \draw [dashed] (0,0) -- (0,-\r);  % Dashed line down the middle
+
+           \ifnum \angle=-90                % Dashed line is NOT to be drawn when the angle is 90 since it overlaps with the string
+           \else
+               \draw [dashed] (0,0) -- (0,-\r);  % Dashed line down the middle.
+           \fi
 
            \draw (bc) circle [radius=\br];        % The small circle representing the bo
 
@@ -44,12 +48,16 @@
                 \draw [->] (bc) -- ++ (\angle+90:#2);       % The velocity vector is tangential to the string so we rotate the angle by 90 degrees by adding 90 to the angle
             }
 
-           \node [align=center, text width=4cm] at (-90:{\r + 1}) {#3};
+           \node [anchor=north, align=center, text width=4cm] at (-90:{\r + 0.35}) {#3};
+           % align=center aligns the text horizontally
+           % anchor=north ensures that the node starts below the specified point. This makes it aligned to the top vertically.
        }
 
-       \matrix
+       \matrix[row sep=0.5cm]
        {
-            \pendulum{-120}{0}{At amplitude speed is zero.} & \pendulum{-105}{0.3}{Speed increasing} & \pendulum{-90}{0.5}{At equilibrium speed is maximum} & \pendulum{-75}{0.3}{Speed decreasing}\\
+            \pendulum{-120}{0}{(1) At maxima speed is zero} & \pendulum{-105}{0.3}{(2) Speed increasing} & \pendulum{-90}{0.5}{(3) At equilibrium speed is maximum} & \pendulum{-75}{0.3}{(4) Speed decreasing}\\
+
+            \pendulum{-60}{0}{(5) At maxima speed is zero} & \pendulum{-75}{-0.3}{(6) Speed increasing in opposite direction} & \pendulum{-90}{-0.5}{(7) At equilibrium again. Maximum speed in opposite direction} & \pendulum{-105}{-0.3}{(8) Speed decreasing}\\
        };
 
    \end{tikzpicture}
