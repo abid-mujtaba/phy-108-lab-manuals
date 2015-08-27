@@ -110,3 +110,17 @@
     \beq
         \bar{t}_{10} = \frac{1}{5} \sum\limits_{i = 1}^5 t_{10_i} = \frac{1}{5} ( t_{10_1} \foreach \n in {2,...,5} { + t_{10_\n} } )
     \eeq
+
+    $\Delta (t_{10})$ is the standard deviation (uncertainty) in the five values $t_{10_i}$ calculated using
+    %
+    \begin{equation}
+
+        % Note: The newcommand cannot be defined inside the 'aligned' environment otherwise it errors out
+        \newcommand{\seed}[1]{(t_{10_#1} - \bar{t}_{10})^2}     % We define a command to create the ()^2 term for a specified value of i. Simplifies the equation below.
+
+        \begin{aligned}
+            
+            \Delta (t_{10}) &= \sqrt{ \frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2} \\
+                            &= \sqrt{ \frac{1}{5} \big[ \seed{1} \foreach \n in {2,...,5}{ + \seed{\n}} \big] }
+        \end{aligned}
+    \end{equation}
