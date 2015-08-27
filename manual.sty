@@ -14,6 +14,7 @@
 \usepackage{tikz}
 \usepackage{tikz-dimline}           % Allows one to draw dimension lines in a diagram. Package cloned from https://github.com/abid-mujtaba/tikz-dimline edited slightly and placed in ~/texmf/tex/latex/.
 \usepackage{tikz-helpgrid}          % Allows one to draw a light-colored grid over the diagram for aiding in element placement
+\usepackage{pgffor}
 
 
 % Tikz commands for externalizing images. This speeds up compilation.
@@ -34,7 +35,7 @@
 
 % We customize the \maketitle command to make it generate the content that we want
 \renewcommand{\maketitle}{
-   {\hfill {\@course} - Experiment - \@experimentnumber}\\       % The braces around \@course forces it to respect the space that follows it 
+   {\hfill {\@course} - Experiment - \@experimentnumber}\\       % The braces around \@course forces it to respect the space that follows it
    \begin{center}
       {\Huge \@title}
    \end{center}
@@ -93,7 +94,7 @@
 % The first argument to \newdrawing is the name of the command to be generated
 % The second argument is all of the \draw arguments that comprise the drawing
 % Note how we use \newkeycommand to introduct the shift, scale and rotate keys with sensible defaults
-% 
+%
 % Example: \newdrawing{\cylinder}{<draw commands>} allows one to issue later on \cylinder[xhift=2,scale=0.5,rotate=45] which draws the object defined with \cylinder to be shifted, scaled and rotated as specified
 %
 % NOTE: The (0,0) coordinate of the drawing defined will serve as the anchor point of the defined object. All shifting, rotation and scaling will occur about this point so it should be defined with care
@@ -101,9 +102,12 @@
 \newcommand{\newdrawing}[2]{
 
    \newkeycommand{#1}[xshift=0,yshift=0,scale=1,rotate=0]{
-      
+
       \begin{scope}[shift={(\commandkey{xshift}, \commandkey{yshift})}, scale=\commandkey{scale}, rotate=\commandkey{rotate}]
          #2
       \end{scope}
    }
 }
+
+% Command for entering a single empty line
+\newcommand{\eline}{\vspace{\baselineskip}}
