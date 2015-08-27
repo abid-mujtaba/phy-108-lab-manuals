@@ -114,13 +114,35 @@
     $\Delta (t_{10})$ is the standard deviation (uncertainty) in the five values $t_{10_i}$ calculated using
     %
     \begin{equation}
-
+        %
         % Note: The newcommand cannot be defined inside the 'aligned' environment otherwise it errors out
         \newcommand{\seed}[1]{(t_{10_#1} - \bar{t}_{10})^2}     % We define a command to create the ()^2 term for a specified value of i. Simplifies the equation below.
-
+        %
         \begin{aligned}
-            
+            %
             \Delta (t_{10}) &= \sqrt{ \frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2} \\
                             &= \sqrt{ \frac{1}{5} \big[ \seed{1} \foreach \n in {2,...,5}{ + \seed{\n}} \big] }
         \end{aligned}
     \end{equation}
+
+    The time period $T$ (time for one oscillation) is calculated by dividing the mean time for $10$ oscillations $\bar{t}_{10}$ by $10$, that is
+    %
+    \beq
+        T = \frac{\bar{t}_{10}}{10}
+    \eeq
+
+    The corresponding uncertainty $\Delta T$ is derived from the equation above and is given by
+    %
+    \beq
+        \Delta T = \frac{\Delta (\bar{t}_{10})}{10}
+    \eeq
+
+    Finally, the uncertainty in the derived quantity $T^2$, denoted by $\Delta (T^2)$, comes from the uncertainty $\Delta T$ in $T$. It is calculated using
+    %
+    \beq
+        \frac{\Delta (T^2)}{T^2} = 2 \frac{\Delta T}{T}
+    \eeq
+    %
+    where the factor of $2$ comes from $T$ being raised to the power $2$ in the expression $T^2$.
+
+\subsection*{Graph}
