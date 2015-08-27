@@ -54,7 +54,7 @@
         \end{tabular}
     \end{center}
 
-    \vspace{\baselineskip}
+    \eline
     For each value of $l$ we will measure the time for 10 oscillations, five times, giving us the five $t_{10_i}$. This table consists of the measurements we take in the experiment. From these measured values we calculate other derived quantities which will allow us to achieve our objective of calculating the value of $g$.
 
     \textit{It is recommended that you observe and right down all of the measurements first before you calculate the rest of the values. Using a pencil to write down the values will make it easy to fix inevitable mistakes.}
@@ -89,6 +89,7 @@
 
     Use your measurements (recorded in the table above) to calculate and record the derived quantities in a table with the following format.
 
+    \eline
     \begin{center}
         \begin{tabular}{| c || c | c | c | c || c | c |}
 
@@ -101,6 +102,11 @@
 
         \end{tabular}
     \end{center}
-    %
+
+    \eline
     where $\bar{t}_{10}$ is the mean/average of the five $t_{10_i}$ given by
     %
+    % Note: The use of \foreach from the pgffor package to provide a loop for the four t_{10_i}
+    \beq
+        \bar{t}_{10} = \frac{1}{5} \sum\limits_{i = 1}^5 t_{10_i} = \frac{1}{5} ( t_{10_1} \foreach \n in {2,...,5} { + t_{10_\n} } )
+    \eeq
