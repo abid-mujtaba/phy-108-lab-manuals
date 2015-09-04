@@ -1,9 +1,8 @@
 FILE = manual.pdf			# The generated pdf file
 
 # We define the command that compiles the tex code.
-# The -shell-escape flag is needed because it allows pdflatex to spawn parallel processes for building tikz pdfs (this speeds up recompilation)
-# The -halt-on-error ensures that if an error occurs the interactive mode is NOT launched and the compilation halts immediately (without creating a broken pdf file). This allows issuing 'make' again to work since it detects a lack of the manual.pdf file and any other build/%.pdf files and recompiles accordingly
-COMPILE = pdflatex -halt-on-error -shell-escape
+# We use a python script for this purpose which parses the output of the Latex compilation and re-compiles when needed
+COMPILE = ./compile.py
 
 # The purpose of the following block is to show the generated pdf file in an efficient fashion.
 # First we check if evince is present. If it is we simply use it to show the pdf. If evince is already showing the file it simply refreshes.
@@ -51,7 +50,7 @@ all: manual.pdf			# We make the manual.pdf target a pre-req of 'all'. The first 
 # manual.fmt is a dependecy. If manual.sty or manual.tex is changed manual.fmt will need to be recreated and so the command for manual.pdf will be run as well but after the processing for manual.fmt is complete.
 # Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency. We use $(wildcard build/*.pdf) to create the list of pdfs in build/ since it will evaluate to empty if none are found. Using build/*.pdf directly as a dependency causes errors when no pdfs exist in build.
 manual.pdf: *.tex $(wildcard build/*.pdf) manual.fmt
-	$(COMPILE) manual.tex
+	make compile
 
 # We use patterns here.
 # We make every pdf in the build/ folder dependent on the corresponding (same name before extension)
