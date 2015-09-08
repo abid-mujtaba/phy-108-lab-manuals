@@ -1,5 +1,9 @@
 FILE = manual.pdf			# The generated pdf file
 
+# We define the command that compiles the tex code.
+# We use a python script for this purpose which parses the output of the Latex compilation and re-compiles when needed
+COMPILE = ./compile.py
+
 # The purpose of the following block is to show the generated pdf file in an efficient fashion.
 # First we check if evince is present. If it is we simply use it to show the pdf. If evince is already showing the file it simply refreshes.
 # If evince is missing we check if mupdf is installed.
@@ -12,7 +16,12 @@ ifneq (, $(shell which evince 2> /dev/null))		# We run 'which evince' to confirm
 	CMD = evince $(FILE) &
 else
 ifneq (, $(shell which mupdf 2> /dev/null))
-ifneq (, $(shell ps -A | grep mupdf && wmctrl -l | grep $(FILE)))
+# We check that mupdf is running and that a window with $(FILE) in the title is present. Because of the peculiarity of make in that it cannot directly access the exit codes of shell commands we have to slightly round-about here.
+# We use ps -A and wmctrl to test for both conditions. We use > /dev/null to ensure that these commands do NOT print to stdout. We use && to ensure that both conditions must be met.
+# We use the || so that the 'echo' is executed only if the first two commands both fail. In that case the word "Fail" is printed to stdout.
+# The 'ifeq' tests if the output of the command is empty. If it is we simply refresh the mupdf window.
+# If "Fail" is printed the ifeq command fails and we launch the pdf using mupdf.
+ifeq (, $(shell ps -A | grep mupdf > /dev/null && wmctrl -l | grep $(FILE) > /dev/null || echo "Fail"))
 	CMD = @ echo "Refreshing mupdf" && wmctrl -R $(FILE) && xdotool key r
 else
 	CMD = @ echo "Launching mupdf" && mupdf $(FILE) &
@@ -38,10 +47,10 @@ all: manual.pdf			# We make the manual.pdf target a pre-req of 'all'. The first 
 # The -shell-escape option is required for Tikz image externalization.
 #
 # If any *.tex file is changed we compile again to create the pdf file.
-# manual.fmt is a dependecy. If manual.sty or manual.tex is changed manual.fmt will need to be recreated and so the command for manual.pdf will be run as well but after the processing for manual.fmt is complete. 
-# Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency. We use $(wildcard build/*.pdf) to create the list of pdfs in build/ since it will evaluate to empty if none are found. Using build/*.pdf directly as a dependency causes errors when no pdfs exist in build. 
+# manual.fmt is a dependecy. If manual.sty or manual.tex is changed manual.fmt will need to be recreated and so the command for manual.pdf will be run as well but after the processing for manual.fmt is complete.
+# Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency. We use $(wildcard build/*.pdf) to create the list of pdfs in build/ since it will evaluate to empty if none are found. Using build/*.pdf directly as a dependency causes errors when no pdfs exist in build.
 manual.pdf: *.tex $(wildcard build/*.pdf) manual.fmt
-	pdflatex -shell-escape manual.tex
+	make compile
 
 # We use patterns here.
 # We make every pdf in the build/ folder dependent on the corresponding (same name before extension)
@@ -57,7 +66,7 @@ manual.fmt:	manual.sty manual.tex
 
 # Compile the tex file.
 compile:
-	pdflatex -shell-escape manual.tex
+	$(COMPILE) manual.tex
 
 # Remove all generated files
 clean:
@@ -72,3 +81,9 @@ fresh:
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
 preamble:
 	pdftex -ini -jobname="manual" "&pdflatex" mylatexformat.ltx manual.tex
+
+
+# We include the local.mk file which contains targets that are local/specific to each branch
+# We intend this Makefile to be common between all branches and all specificity to be contained in the local.mk file
+# The '-' before include tells 'make' to ignore errors in executing this command. Basically this will not complain if 'local.mk' is missing
+-include local.mk
