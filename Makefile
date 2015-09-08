@@ -80,8 +80,9 @@ fresh:
 
 # Pre-compile the preamble to speed up compilation
 # Source: http://www.howtotex.com/tips-tricks/faster-latex-part-iv-use-a-precompiled-preamble/
+# Note the use of $(NAME:.x=) to get the string "manual" without the ".x" since -jobname only needs the word "manual" to create the manual.fmt file
 preamble:
-	pdftex -ini -jobname="manual" "&pdflatex" mylatexformat.ltx $(NAME:.x=.tex)
+	pdftex -ini -jobname="$(NAME:.x=)" "&pdflatex" mylatexformat.ltx $(NAME:.x=.tex)
 
 
 # We include the local.mk file which contains targets that are local/specific to each branch
