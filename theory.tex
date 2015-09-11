@@ -21,15 +21,46 @@ where $k$ is the Spring Constant.
     \diag
 
     Therefore at equilibrium (when the mass-spring system is at rest) the two forces must be balanced and so
-    \beqsn
+    \beqs \label{mgkx}
         F - mg &= 0\\
         \imply kx - mg &= 0\\
         \imply kx &= mg\\
         \imply x &= \frac{g}{k} m\\
-    \eeqsn
+    \eeqs
 
     The final equation gives the relation between the mass attached to the string and the extension it produces.
 
-% \section{Single Spring}
-%
-%     An experiment investigating Hooke's Law usually starts with a vertically suspended spring with a mass-hanger attached. The weight of the hanger stretches the spring and the pointer attached to the hanger
+\section{Single Spring}
+
+    Using equation \eqref{mgkx} one can calculate the spring constant $k$ of a spring my performing an experiment where one varies the attached mass $m$ and measures the corresponding extension $x$. The slope of the graph of $x$ vs. $m$ is then given by $g / k$.
+
+\section{Springs in parallel}
+
+    A mass can be suspended from two springs in parallel by connecting the bottoms of the two springs by a pole and suspending the mass from its center, as shown in the diagram below.
+
+    \diag
+
+    The weight of the mass causes both springs to be extended by the same amount $x$ since they are connected by means of the pole. The two springs are essentially responding to the weight of the mass by extending and applying a restoring force. Thus together they are behaving as a single spring would behave.
+
+    The question is: What is the \textit{effective} spring constant of the two parallel springs? That is, for what value of the spring constant would a \textbf{single} spring have the same effect as the two springs in parallel.
+
+    Let the two springs have spring constants $k_1$ and $k_2$. Let the effective spring constant (of the equivalent single spring) be $k$. If the application of mass $m$ to the system produces an extension $x$ we can use \eqref{mgkx} to relate $x$ to $m$ using the spring constants. For the single spring case the equation is straight-forward, it is simply \eqref{mgkx}.
+
+    For the springs in parallel we draw a free-body diagram and equate the upward and downward forces.
+
+    \diag
+
+    Since the two springs in parallel have the same extension $x$ we have
+    \beq \label{parallel}
+        k_1 x + k_2 x = mg
+    \eeq
+
+    Since the parallel spring system and the effective single spring are by definition equivalent we can use \eqref{mgkx} to substitute for $mg$ in \eqref{parallel} giving us
+    %
+    \beqc
+        k x = m g = k_1 x + k_2 x\\
+        \imply k x = (k_1 + k_2) x\\
+        \imply k = k_1 + k_2
+    \eeqc
+
+    Therefore the \textit{effective} spring constant of two springs in parallel is simply the sum of their individual spring constants. This basically indicates that it is harder to stretch two springs in parallel than it is to stretch either one by itself.
