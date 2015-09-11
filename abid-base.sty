@@ -8,8 +8,10 @@
 \usepackage[margin=0.75in]{geometry}        % Specify the margins of the page
 \usepackage[parfill]{parskip}               % By default new paragraphs will NOT have indentation on the first line.
 \usepackage{amsmath}
+\usepackage{enumerate}                      % Gives access to lower-case roman numerals for enumeration
+\usepackage{tabularx}
 \usepackage{keycommand}             % For defining commands with key-value pairs
-\usepackage{siunitx}
+\usepackage[per-mode=symbol]{siunitx}
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usepackage{tikz-dimline}           % Allows one to draw dimension lines in a diagram. Package cloned from https://github.com/abid-mujtaba/tikz-dimline edited slightly and placed in ~/texmf/tex/latex/.
@@ -63,8 +65,9 @@
 % Shortcuts for units
 \newcommand{\cm}{\si{\centi \metre}}
 \renewcommand{\sec}{\si{\second}}
-\newcommand{\gpcc}{\si[per-mode=symbol]{\gram \per \cubic \centi \metre}}
-\newcommand{\cmpss}{\si[per-mode=symbol]{\centi\metre \per \second \squared}}
+\newcommand{\gpcc}{\si{\gram \per \cubic \centi \metre}}
+\newcommand{\cmpss}{\si{\centi\metre \per \second \squared}}
+\newcommand{\quantity}[2]{$#1$ $\si{#2}$}       % Use this command to specify a quantity with units e.g. \quantity{30}{\second} with print out 30 s
 
 % Custom command for generating drawings that can be placed where needed
 % This creates the \newdrawing command which in turn generates a \newkeycommand
