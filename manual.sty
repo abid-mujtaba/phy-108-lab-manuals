@@ -3,23 +3,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{manual}[2015/06/07]
 
-% Declare all the packages used
+% Declare abid-base as a dependency so that all of its packages and commands are pulled in
+\usepackage{abid-base}
 
-\usepackage[margin=0.75in]{geometry}        % Specify the margins of the page
-\usepackage[parfill]{parskip}               % By default new paragraphs will NOT have indentation on the first line.
-\usepackage{amsmath}
-\usepackage{keycommand}             % For defining commands with key-value pairs
-\usepackage{siunitx}
-\usepackage{pgfplots}
-\usepackage{tikz}
-\usepackage{tikz-dimline}           % Allows one to draw dimension lines in a diagram. Package cloned from https://github.com/abid-mujtaba/tikz-dimline edited slightly and placed in ~/texmf/tex/latex/.
-\usepackage{tikz-helpgrid}          % Allows one to draw a light-colored grid over the diagram for aiding in element placement
-
-
-% Tikz commands for externalizing images. This speeds up compilation.
-\usetikzlibrary{external}
-\tikzexternalize[prefix=build/]        % Activate image externalization
-
+% Declare all the packages used in addition to the ones in abid-base
 
 
 % We provide definition of commands that are used in all Lab Manuals
@@ -34,7 +21,7 @@
 
 % We customize the \maketitle command to make it generate the content that we want
 \renewcommand{\maketitle}{
-   {\hfill {\@course} - Experiment - \@experimentnumber}\\       % The braces around \@course forces it to respect the space that follows it 
+   {\hfill {\@course} - Experiment - \@experimentnumber}\\       % The braces around \@course forces it to respect the space that follows it
    \begin{center}
       {\Huge \@title}
    \end{center}
@@ -42,68 +29,3 @@
 }
 
 \makeatother        % Stop treating @ as a normal character
-
-
-\newcommand{\beq}{\begin{equation}}
-\newcommand{\eeq}{\end{equation}}
-
-\newcommand{\beqn}{\begin{equation*}}           % Equation environment without numbering
-\newcommand{\eeqn}{\end{equation*}}
-
-\newcommand{\beqsn}{\begin{equation*}\begin{aligned}}
-\newcommand{\eeqsn}{\end{aligned}\end{equation*}}
-
-\newcommand{\beqc}{\begin{equation}\begin{gathered}}
-\newcommand{\eeqc}{\end{gathered}\end{equation}}
-
-\newcommand{\beqcn}{\begin{equation*}\begin{gathered}}
-\newcommand{\eeqcn}{\end{gathered}\end{equation*}}
-
-\renewcommand{\arraystretch}{1.5}       % Increase row height of all tables
-
-\newcommand{\paren}[1]{\left( #1 \right)}       % An environment that places its contents inside a pair of parentheses
-
-\newcommand{\imply}{\,\, \Rightarrow \,\,}
-
-% A shortcut for place-holder text where diagram is needed
-\newcommand{\diag}{\vspace{\baselineskip}\begin{center}\textbf{INSERT DIAGRAM}\end{center}}
-
-% Custom environment for tables incorporating the standard setup. Using this one can simply use \begin{ctablet}{| c | c |} ... \cend{ctable}
-\newenvironment{ctable}{
-    \begin{table}[h]
-    \centering
-    \begin{tabular}
-    }{
-    \end{tabular}
-    \end{table}
-}
-
-% Command for formating table headers that contain units
-\newcommand{\tH}[2]{$#1$ (#2)}
-\newcommand{\tHW}[3]{\makebox[#1]{$#2$ (#3)}}      % We use a makebox to make the header have the specified width (#1)
-
-% Shortcuts for units
-\newcommand{\cm}{\si{\centi \metre}}
-\renewcommand{\sec}{\si{\second}}
-\newcommand{\gpcc}{\si[per-mode=symbol]{\gram \per \cubic \centi \metre}}
-\newcommand{\cmpss}{\si[per-mode=symbol]{\centi\metre \per \second \squared}}
-
-% Custom command for generating drawings that can be placed where needed
-% This creates the \newdrawing command which in turn generates a \newkeycommand
-% The first argument to \newdrawing is the name of the command to be generated
-% The second argument is all of the \draw arguments that comprise the drawing
-% Note how we use \newkeycommand to introduct the shift, scale and rotate keys with sensible defaults
-% 
-% Example: \newdrawing{\cylinder}{<draw commands>} allows one to issue later on \cylinder[xhift=2,scale=0.5,rotate=45] which draws the object defined with \cylinder to be shifted, scaled and rotated as specified
-%
-% NOTE: The (0,0) coordinate of the drawing defined will serve as the anchor point of the defined object. All shifting, rotation and scaling will occur about this point so it should be defined with care
-
-\newcommand{\newdrawing}[2]{
-
-   \newkeycommand{#1}[xshift=0,yshift=0,scale=1,rotate=0]{
-      
-      \begin{scope}[shift={(\commandkey{xshift}, \commandkey{yshift})}, scale=\commandkey{scale}, rotate=\commandkey{rotate}]
-         #2
-      \end{scope}
-   }
-}
