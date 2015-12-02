@@ -1,0 +1,31 @@
+The Modulus of Rigidity, $\eta$, also known as the Shear Modulus, is a property of materials which denotes how the material responds to a Shear Force. It describes how much a material deforms when a force is applied perpendicular to its axis. It is a property which is of critical importance to structural engineers since it determines how a structure will respond to lateral forces (wind, earthquakes, etc.).
+
+
+\section{Spring Constant}
+
+We have already studied Hooke's Law, $F = k x$, which governs the behaviour of a spring. The spring constant $k$ depends upon the shape of the spring (its geometry), the thickness of the wire, and the Modulus of Rigidity of the material used to construct it.
+%
+\beq
+    k = \frac{\pi r^4 \eta}{2 l R^2}
+\eeq
+
+where $R$ is the radius of the spring, $r$ is the radius of the wire and $l$ is the length of the wire that makes up the spring. If the spring has $N$ turns and a radius of $R$ then $l = N 2 \pi R$ and so
+%
+\beq \label{k_eta}
+    k = \frac{\eta r^4}{4 N R^3}
+\eeq
+
+
+\section{Time Period}
+
+Equation \eqref{k_eta} means we can measure the modulus of rigidity of a material (such as steel) by using a spring constructed from that material. If a mass $M$ is hung from the spring and allowed to oscillate then the time period of the oscillation is given by
+%
+\beq
+    T = 2 \pi \sqrt{\frac{M}{k}}
+\eeq
+
+Substituting in equation \eqref{k_eta} gives us
+%
+\beq
+    T = \frac{4 \pi}{r^2} \sqrt{\frac{N R^3 M}{\eta}}
+\eeq
