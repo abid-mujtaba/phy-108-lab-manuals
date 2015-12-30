@@ -67,12 +67,12 @@
         \end{center}
 
 
-\section{Springs in Parallel}
+\section{Springs in Parallel}\label{parallel_springs}
 
     \subsection*{Objective}
 
         Verify that two springs in parallel have an effective spring constant given by
-        \beq \label{parallel}
+        \beq \label{eqn_parallel}
             k = k_1 + k_2
         \eeq
 
@@ -86,9 +86,31 @@
 
     \subsection*{Calculations}
 
-        Use your graph to calculate the effective spring constant $k_{parallel}$ of the two parallel springs. Compare your answer to the expected value from equation \eqref{parallel} by calculating the percentage difference between the two values.
+        Use your graph to calculate the effective spring constant $k_{parallel}$ of the two parallel springs. Compare your answer to the expected value from equation \eqref{eqn_parallel} by calculating the percentage difference between the two values.
 
         The percentage difference between any two values $x_1$ and $x_2$ is defined as
-        \beq
+        \beq \label{percentage_difference}
             \frac{| x_1 - x_2 |}{\frac{1}{2} (x_1 + x_2)} \times 100 \%
         \eeq
+
+
+\section{Springs in Series}
+
+    \subsection*{Objective}
+
+        Verify that two springs in series have an effective springs constant given by
+        \beq \label{series}
+            \frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}
+        \eeq
+
+    \subsection*{Setup}
+
+        Using the same two springs attach one to the horizontal arm on the stand and attach the top of the other spring from the bottom of the first. Now attach the empty mass hanger to the bottom of the lower spring.
+
+    \subsection*{Procedure}
+
+        Follow the procedure from sections \ref{single_spring} and \ref{parallel_springs} to create a table and a graph of $l$ vs. $m$.
+
+    \subsection*{Calculations}
+
+        Use your graph to calculate the effective spring constant $k_{series}$ of the two springs in series. Compare your answer the expected value from equation \eqref{series} by calculating the percentage difference between the two values (using equation \eqref{percentage_difference}).
