@@ -127,6 +127,58 @@
 
         Only when it passes the equilibrium position going down does one complete oscillation occur. Only then should you advance your count to one. Keep counting until the mass has completed 20 oscillations at which point stop your stopwatch.
 
-        Record the total mass (including hanger) and the time for 20 oscillations in a table with the following format. \textit{Only fill in the first two columns which comprise the observations. You can fill out the rest of the columns after you have completed your observations and are starting your calculations.}
+        Stop the mass. Repeat the process described above to get two more readings for $T_{20}$, the time for 20 oscillations.
 
-        % Insert Table
+        Record the total mass (including hanger) and $T_{20}$ (the time for 20 oscillations) in a table with the following format. \textit{Only fill in the first four columns which comprise the observations. You can fill out the rest of the columns after you have completed your observations and are starting your calculations.}
+
+        \eline
+        \begin{center}
+           \begin{tabular}{| c | c | c | c || c | c || c | c |}
+              \hline
+              \tH{m}{\si{\gram}} & \tH{T_{20 \_ 1}}{\sec} & \tH{T_{20 \_ 2}}{\sec} & \tH{T_{20 \_ 3}}{\sec} & \tHW{40pt}{T}{\sec} & \tHW{40pt}{\Delta T}{\sec} & \tHW{40pt}{T^2}{\si{\second \squared}} & \tH{\Delta (T^2)}{\si{\second \squared}}\\
+              \hline
+              &&&&&&&\\
+              \hline
+           \end{tabular}
+         \end{center}
+
+
+   \subsection*{Calculations}
+
+        Equation \eqref{time_period} is not linear between $T$ and $m$. To linearize it we square both sides.
+        %
+        \beq
+            T^2 = \frac{4 \pi^2}{k} m
+        \eeq
+
+        Now the equation is linear between $T^2$ and $m$. A graph between these quantities will have a gradient/slope equal to $\displaystyle \frac{4 \pi^2}{k}$.
+
+        Complete the table above by filling out the remaining columns. $T$ is the time period which is calculating by averaging the $T_{20}$ and dividing by 20 to get the time for a single oscillation.
+        %
+        \beq
+            T = \frac{T_{20\_1} + T_{20\_2} + T_{20\_3}}{60}
+        \eeq
+
+        $\Delta T$ is the uncertainty associated with the time period $T$ and is calculated using the standard deviation of the three $T_{20}$.
+        %
+        \beq
+            \Delta T = \frac{1}{20} \Delta T_{20}
+        \eeq
+
+        Finally the uncertainty $\Delta (T^2)$ in the squared quantity $T^2$ is calculated using the propagation of error equation for raising powers.
+        %
+        \beq
+            \frac{\Delta (T^2)}{T^2} = 2 \frac{\Delta T}{T}
+        \eeq
+
+        Once the table is completed use it to plot a graph of $T^2$ vs $m$. Draw a best-fit line as well as steep and shallow lines.
+
+        \begin{enumerate}[(i)]
+
+            \item Calculate the value of the slope as well as its associated uncertainty.
+
+            \item Use the value of the slope and its uncertainty to calculate the value of the spring constant and its associated uncertainty.
+
+            \item Compare this value to the one calculated in section \ref{single_spring} by calculating the percentage difference (equation \eqref{percentage_difference}) between the values.
+
+        \end{enumerate}
