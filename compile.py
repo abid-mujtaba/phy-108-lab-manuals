@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This script uses subprocess to compile the Latex project.
 # It parses the output produced by every compilation and based on it re-compiles the project if necessary. For instance to get cross-references (using \label and \eqref) to work.
