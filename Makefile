@@ -66,7 +66,7 @@ build/%.pdf: diag/%.tex
 	rm -f $@
 
 # manual.fmt is created from abid-base.sty, manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
-$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty
+$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
 	make preamble
 
 # Compile the tex file.
