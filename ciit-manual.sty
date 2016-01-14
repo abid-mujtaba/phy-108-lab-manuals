@@ -7,7 +7,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ciit-manual}[2015/12/13]
 
-\RequirePackage{fancyhdr}
+\RequirePackage{fancyhdr}       % This package is used to style the title page (in \maketitle)
 
 % We declare new variables which will be used in the title of the exam. The variables with @ in them are global and are used inside the \maketitle macro
 
@@ -21,22 +21,23 @@
 \newcommand{\experimentnumber}[1]{\def\@experimentnumber{#1}}
 \newcommand{\experimenttitle}[1]{\def\@experimenttitle{#1}}
 
-\fancypagestyle{title}{\fancyhf{}\rfoot{Compiled by Abid H. Mujtaba (CIIT 2016)}}
+% Define a new fancy page style for the title page. It has the page number in the center footer (like normal) and a text on the right side indicating the author
+\fancypagestyle{titlepage}{\fancyhf{}\cfoot{\thepage}\rfoot{\small Edited by Abid H. Mujtaba (2016)}}
 
 % We customize the \maketitle command to make it generate the content that we want
 \renewcommand{\maketitle}{
 
-    \thispagestyle{title}
-   
+    \thispagestyle{titlepage}           % Use the custom fancy page style for all title pages
+
     \includegraphics[width=0.1\textwidth]{comsats-logo}         % Place the COMSATS logo
-    \vspace{-5\baselineskip}                                    % Since we want the text and the logo to be on the same lines we simply pull back by 5 lines 
+    \vspace{-5\baselineskip}                                    % Since we want the text and the logo to be on the same lines we simply pull back by 5 lines
 
     \begin{center}
         {COMSATS Institute of Information Technology,\\
         Islamabad Campus}
 
         \vspace{0.5\baselineskip}
-        \@coursetitle 
+        \@coursetitle
 
         \rule{0.8\linewidth}{0.5pt}
 
