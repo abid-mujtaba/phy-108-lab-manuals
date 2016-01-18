@@ -73,9 +73,10 @@ $(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
 compile:
 	$(COMPILE) $(NAME:.x=.tex)
 
-# Remove all generated files
+# Remove all generated files (with the exception of comsats-logo.pdf)
 clean:
-	rm -f *.pdf *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	rm -f *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	ls *.pdf | grep -v "comsats-logo.pdf" | xargs -I {} rm {}
 
 # Clean the environment before compiling the pdf afresh
 fresh:
