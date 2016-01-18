@@ -62,16 +62,17 @@ build/%.pdf: diag/%.tex
 	rm -f $@
 
 # manual.fmt is created from abid-base.sty, manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
-$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty
+$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
 	make preamble
 
 # Compile the tex file.
 compile:
 	$(COMPILE) $(NAME:.x=.tex)
 
-# Remove all generated files
+# Remove all generated files (with the exception of comsats-logo.pdf)
 clean:
-	rm -f *.pdf *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	rm -f *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	ls *.pdf | grep -v "comsats-logo.pdf" | xargs -I {} rm {}
 
 # Clean the environment before compiling the pdf afresh
 fresh:
