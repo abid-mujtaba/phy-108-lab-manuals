@@ -1,31 +1,10 @@
 % We define all style related instructions for formating Lab Manuals inside this package
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{manual}[2015/06/07]
+\ProvidesPackage{manual}[2016/01/14]
 
 % Declare abid-base as a dependency so that all of its packages and commands are pulled in
 \usepackage{abid-base}
+\usepackage{ciit-manual}
 
-% Declare all the packages used in addition to the ones in abid-base
-
-
-% We provide definition of commands that are used in all Lab Manuals
-
-\makeatletter       % We use this command because we want to refer to variables in our definition that contain the character @
-
-% We declare new variables which will be used in the title
-\def\@course{}      % The variables with @ in them are global and are used inside the \maketitle macro
-\def\@experimentnumber{}
-\newcommand{\course}[1]{\def\@course{#1}}       % We declare the \course command to be a means of setting the value of the \@course variable so that \@course is hidden from the end-user
-\newcommand{\experimentnumber}[1]{\def\@experimentnumber{#1}}
-
-% We customize the \maketitle command to make it generate the content that we want
-\renewcommand{\maketitle}{
-   {\hfill {\@course} - Experiment - \@experimentnumber}\\       % The braces around \@course forces it to respect the space that follows it
-   \begin{center}
-      {\Huge \@title}
-   \end{center}
-   \vspace{2\baselineskip}
-}
-
-\makeatother        % Stop treating @ as a normal character
+\renewcommand{\arraystretch}{1.5}

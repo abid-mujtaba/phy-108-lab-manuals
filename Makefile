@@ -5,6 +5,10 @@ FILE := $(NAME:.x=.pdf)			# The generated pdf file. Note the use or variable sub
 # We use a python script for this purpose which parses the output of the Latex compilation and re-compiles when needed
 COMPILE := ./compile.py
 
+# We define the command that compiles the tex code.
+# We use a python script for this purpose which parses the output of the Latex compilation and re-compiles when needed
+COMPILE = ./compile.py
+
 # The purpose of the following block is to show the generated pdf file in an efficient fashion.
 # First we check if evince is present. If it is we simply use it to show the pdf. If evince is already showing the file it simply refreshes.
 # If evince is missing we check if mupdf is installed.
@@ -62,16 +66,17 @@ build/%.pdf: diag/%.tex
 	rm -f $@
 
 # manual.fmt is created from abid-base.sty, manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
-$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty
+$(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
 	make preamble
 
 # Compile the tex file.
 compile:
 	$(COMPILE) $(NAME:.x=.tex)
 
-# Remove all generated files
+# Remove all generated files (with the exception of comsats-logo.pdf)
 clean:
-	rm -f *.pdf *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	rm -f *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	ls *.pdf | grep -v "comsats-logo.pdf" | xargs -I {} rm {}
 
 # Clean the environment before compiling the pdf afresh
 fresh:
