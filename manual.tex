@@ -8,9 +8,9 @@
 \renewcommand{\arraystretch}{1.5}
 
 % Define the variables that are required for generating the title of the document
-\course{PHYS - 108}
+\coursetitle{PHYS - 108}
 \experimentnumber{9}
-\title{Compound Pendulum}
+\experimenttitle{Compound Pendulum}
 
 \csname endofdump\endcsname     % This indicates the end of the "static" part of the preamble which is pre-compiled and placed in the manual.fmt file to speed up compilation.
 
@@ -23,6 +23,8 @@
 
    \newpage
    \maketitle           % Generate the title using the customized command defined in manual-defs.tex
+
+   \setcounter{equation}{0}     % Restart equation numbering in the experiment section
 
    \input{experiment}
 
