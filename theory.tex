@@ -65,15 +65,31 @@ In complete analogy to equation \eqref{F_ma} it is clear that for constant torqu
 
     Differentiating $y = r \theta$ gives us
     %
-    \beq
+    \beq \label{v_rw}
         v = r \omega
     \eeq
     %
-    that is the velocity of the falling weight is related to the angular speed of the flywheel by means of the radius of the axle.
+    that is the velocity of the falling weight is related to the angular speed of the flywheel by means of the radius of the axle. The number of turns $n$ that the flywheel makes as the weight descends can also be determined using the radius $r$. When the weight descends through $h$ the flywheel also turns through a distance equal to $h$ which corresponds to $n$ turns. Since each turn corresponds to a circumference we have
+    %
+    \beq \label{h_nr}
+        h = n 2 \pi r \imply n = \frac{h}{2 \pi r}
+    \eeq
 
-    This substitution simplifies equation \eqref{energy_1} to
+    Substituting equations \eqref{v_rw} and \eqref{h_nr} in to equation \eqref{energy_1} will simplify it to
     %
     \beq \label{energy_2}
-        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + n W_f
+        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + \frac{h}{2 \pi r} W_f
     \eeq
-    
+
+    The next step is figuring out a means to measure or calculate the final angular speed $\omega$ of the flywheel. This can be related very elegantly with the problem of measuring $W_f$ (the work done per turn by friction). We assume that $W_f$ is constant, that is, it doesn't change with the angular speed of the flywheel. This assumption means we are taking the angular acceleration due to friction to be constant.
+
+    After the weight has descended and the string has detached from the flywheel the only force acting on the flywheel is the friction in the bearings. This will cause the flywheel to slow down and eventually come to rest. We measure the number of turns $N$ and time $t$ it takes for the flywheel to come to rest after the weight has detached, that is the time and turns it takes to go from an angular speed of $\omega$ to zero.
+
+    Since the flywheel is decelerated entirely by friction the rotational kinetic energy is converted to work done against friction (in $N$ turns) giving us
+    %
+    \beq \label{W_f}
+        N W_f = \frac{1}{2} I \omega^2 \imply W_f = \frac{1}{2 N} I \omega^2
+    \eeq
+    %
+
+    We can easily measure $N$ by counting the number of turns the flywheel makes as it decelerates (after the weight has detached). This now leaves us with measuring or calculating $\omega$.
