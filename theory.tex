@@ -75,10 +75,10 @@ In complete analogy to equation \eqref{F_ma} it is clear that for constant torqu
         h = n 2 \pi r \imply n = \frac{h}{2 \pi r}
     \eeq
 
-    Substituting equations \eqref{v_rw} and \eqref{h_nr} in to equation \eqref{energy_1} will simplify it to
+    Substituting equation \eqref{v_rw} in to equation \eqref{energy_1} will simplify it to
     %
     \beq \label{energy_2}
-        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + \frac{h}{2 \pi r} W_f
+        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + n W_f
     \eeq
 
     The next step is figuring out a means to measure or calculate the final angular speed $\omega$ of the flywheel. This can be related very elegantly with the problem of measuring $W_f$ (the work done per turn by friction). We assume that $W_f$ is constant, that is, it doesn't change with the angular speed of the flywheel. This assumption means we are taking the angular acceleration due to friction to be constant.
@@ -92,4 +92,35 @@ In complete analogy to equation \eqref{F_ma} it is clear that for constant torqu
     \eeq
     %
 
-    We can easily measure $N$ by counting the number of turns the flywheel makes as it decelerates (after the weight has detached). This now leaves us with measuring or calculating $\omega$.
+    We can easily measure $N$ by counting the number of turns the flywheel makes as it decelerates (after the weight has detached). This now leaves us with measuring or calculating $\omega$. That is easy enough since we have assumed a constant angular acceleration. The flywheel starts with an angular speed of $\omega$ and decelerates uniformly in time $t$ coming to rest after $N$ revolutions.
+
+    $N$ revolutions correspond to an angular displacement $\theta = 2 \pi N$. Using the equations for rotational kinematics namely
+    %
+    \beqs \label{omega_Nt}
+        \theta &= \frac{1}{2} (\omega_i + \omega_f) t\\[0.25\baselineskip]
+        \imply 2 \pi N &= \frac{1}{2} (\omega + 0) t\\[0.25\baselineskip]
+        \imply \omega &= \frac{4 \pi N}{t}
+    \eeqs
+
+    Substituting equations \eqref{W_f} in to \eqref{energy_2}
+    %
+    \beqc
+        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + \frac{n}{2N} I \omega^2\\[0.25\baselineskip]
+        \imply m g h = \frac{1}{2} \omega^2 (m r^2 + I + \frac{n}{N} I)\\
+    \eeqc
+
+    Let us make $I$ the subject of the equation since we are primarily interested in calculating the moment of inertia of the flywheel
+    %
+    \begingroup
+        \addtolength{\jot}{0.5\baselineskip}       % Increase spacing between equations in the gathered environment
+
+        \beqc
+            m g h = \frac{1}{2} \omega^2 \left( m r^2 + I \left( 1 + \frac{n}{N} \right) \right)\\
+            \imply \frac{2 m g h}{\omega^2} = m r^2 + I \left( 1 + \frac{n}{N} \right)\\
+            \imply \frac{2 m g h}{\omega^2} - m r^2 = I \left( \frac{N + n}{N} \right)\\
+            \imply m \left( \frac{2 g h}{\omega^2} - r^2 \right) = I \left( \frac{N + n}{N} \right)\\
+            \imply I = \frac{N m}{N + n} \left( \frac{2 g h}{\omega^2} - r^2 \right)
+        \eeqc
+    \endgroup
+
+    Using equations \eqref{h_nr} and \eqref{omega_Nt} and by measuring $N$ and $t$ after the weight has detached we can now calculate the moment of inertia of the flywheel.
