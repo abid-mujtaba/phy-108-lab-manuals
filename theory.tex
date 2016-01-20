@@ -51,8 +51,29 @@ In complete analogy to equation \eqref{F_ma} it is clear that for constant torqu
 
     If we define $W_f$ as the work done by friction in the ball bearings during a \textbf{single} turn of the flywheel then conservation of energy gives us
     %
-    \beq
+    \beq \label{energy_1}
         m g h = \frac{1}{2} m v^2 + \frac{1}{2} I \omega^2 + n W_f
     \eeq
     %
     where $m$ is the mass of the descending weight, $v$ is the final velocity of the weight (just before impact), $\omega$ is the final angular speed of the flywheel and $n$ is the number of turns the flywheel makes as the weight descends (and the string unwinds).
+
+    Our purpose is to calculate the value of $I$ using this experiment. To that end we need to able to measure or calculate the value of every other variable in equation \eqref{energy_1}. We can measure $m$ and $h$ directly, and use the standard value of $g$, leaving us with $v$, $\omega$, $n$ and $W_f$ unknown.
+
+    The first step is to reduce the number of unknown by relating $v$ (the velocity of the weight) to $\omega$ (the angular speed of the flywheel). Since the weight and the flywheel are connected by means of a taut string the distance through which the weight descends must be equal to the distance through which the rim of the axle rotates (that is if the weight descends by \quantity{1}{\cm} then the outer surface of the axle must necessarily rotate through \quantity{1}{\cm} to allow \quantity{1}{\cm} of string to unwind allowing the weight to descend).
+
+    Mathematically this is stated as $y = s = r \theta$ where $y$ is the amount by which the weight descends which is equal to $s$ the amount through which the surface of the axle rotates which in turn is equal to $r \theta$ where $r$ is the radius of the flywheel, and $\theta$ is the corresponding angle through which the axle (and therefore the flywheel) rotates.
+
+    Differentiating $y = r \theta$ gives us
+    %
+    \beq
+        v = r \omega
+    \eeq
+    %
+    that is the velocity of the falling weight is related to the angular speed of the flywheel by means of the radius of the axle.
+
+    This substitution simplifies equation \eqref{energy_1} to
+    %
+    \beq \label{energy_2}
+        m g h = \frac{1}{2} m r^2 \omega^2 + \frac{1}{2} I \omega^2 + n W_f
+    \eeq
+    
