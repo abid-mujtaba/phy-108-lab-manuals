@@ -7,6 +7,9 @@ Each lab is contained in a separate branch. The 'master' and 'initial' branch ar
 ### Labs
 
 * [Simple Pendulum](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/simple-pendulum.pdf)
+* [Viscosity](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/viscosity.pdf)
+* [Compound Pendulum](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/compound-pendulum.pdf)
+* [Rigidity](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/rigidity.pdf)
 
 ### Licensing
 
