@@ -6,7 +6,7 @@ Each lab is contained in a separate branch. The 'master' and 'initial' branch ar
 
 ### Licensing
 
-I am releasing the LaTeX code under the MIT License whereby anyone can use and modify the code as they wish as long as they attribute it to me (a url to this repo in your LaTeX code is sufficient).
+I am releasing the LaTeX code under the Apache v2 License whereby anyone can use and modify the code as they wish as long as they attribute it to me (a url to this repo in your LaTeX code is sufficient).
 
 
 ### About Me
