@@ -9,7 +9,7 @@ Each lab is contained in a separate branch. The 'master' and 'initial' branch ar
 I am releasing the LaTeX code under the Apache v2 License whereby anyone can use and modify the code as they wish as long as they attribute it to me (a url to this repo in your LaTeX code is sufficient).
 
 ```
-Copyright 2014 Abid Hasan Mujtaba
+Copyright 2016 Abid Hasan Mujtaba
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
