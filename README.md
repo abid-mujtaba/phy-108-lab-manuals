@@ -4,6 +4,13 @@ These manuals have been written/revamped for the PHY-108 course at CIIT Islamaba
 
 Each lab is contained in a separate branch. The 'master' and 'initial' branch are used to maintain the core code that is common to all manuals.
 
+### Labs
+
+* [Simple Pendulum](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/simple-pendulum.pdf)
+* [Viscosity](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/viscosity.pdf)
+* [Compound Pendulum](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/compound-pendulum.pdf)
+* [Rigidity](http://abid-mujtaba.github.io/phy-108-lab-manuals/docs/rigidity.pdf)
+
 ### Licensing
 
 I am releasing the LaTeX code under the Apache v2 License whereby anyone can use and modify the code as they wish as long as they attribute it to me (a url to this repo in your LaTeX code is sufficient).
