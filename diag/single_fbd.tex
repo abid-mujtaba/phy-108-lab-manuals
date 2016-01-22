@@ -1,0 +1,14 @@
+\tikzsetnextfilename{single_fbd}
+
+\begin{center}
+    \begin{tikzpicture}
+
+        \def\hw{0.25}       % Half-width of rectangle
+        \def\l{1.25}           % Length of each arrow
+
+        \draw (\hw, \hw) rectangle (-\hw, -\hw) node [midway] {$m$};
+        \draw [->, thick] (0,\hw) -- (0,\l) node [above] {$F = k x$};
+        \draw [->, thick] (0,-\hw) -- (0,-\l) node [below] {$W = m g$};
+
+    \end{tikzpicture}
+\end{center}
