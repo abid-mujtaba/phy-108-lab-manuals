@@ -2,6 +2,7 @@
 
     Calculate the moment of inertia of a flywheel.
 
+
 \section{Apparatus}
 
     \begin{itemize}
@@ -13,6 +14,7 @@
         \item Mass-Hanger set
 
     \end{itemize}
+
 
 \section{Procedure}
 
@@ -52,6 +54,7 @@
 
     Our aim is to vary the mass $m$ of the weight (mass-hanger) and measure the corresponding values of $N$ and $t$. These will be used to calculate the corresponding values of the moment of inertia $I$ of the flywheel.
 
+
     \subsection{Setup}
 
         You will be provided with a flywheel mounted on a wall-bracket. A peg will be attached to the axle of the flywheel which will allow you to hang a loop of string from it. Start by measuring the radius $r$ of the axle of the flywheel (using a vernier caliper).
@@ -63,6 +66,7 @@
         Now release the weight from rest. As the weight descends the attached string will unwind from the flywheel causing it to rotate. When the weight reaches the floor the string will run out and its top loop will fall of the peg causing the weight to detach from the flywheel.
 
         Since the flywheel will have by this time acquired an angular speed $\omega$ it will continue to rotate until it is brought to rest by friction in the bearings which support the axle.
+
 
     \subsection{Observations}
 
@@ -90,3 +94,34 @@
         \end{ctable}
 
         Perform these observations for at least four different values of $m$ and tabulate your results.
+
+
+\section{Calculations}
+
+    Use your measurements to calculate and record the derived quantities in a table with the following format.
+
+    \def\cw{40pt}
+    \begin{ctable}{| c | c | c || c || c | }
+        \hline
+        \tHW{\cw}{m}{\si{\gram}} & \makebox[\cw]{$N$} & \tHW{\cw}{t}{\sec} & \tHW{\cw}{\omega}{\si{\radian \per \sec}} & \tHW{\cw}{I}{\si{\gram \centi\meter \squared}}\\
+        \hline
+        &&&&\\
+        \hline
+    \end{ctable}
+    %
+    where $N$ is the average of the three $N_i$, $t$ is the average of the three $t_i$, and $\omega$ and $I$ are calculated using equations \eqref{omega} and \eqref{I} respectively.
+
+
+\section{Results}
+
+    You now have at least four values of $I$ corresponding to the different values of $m$ that you used.
+
+    \begin{enumerate}
+
+        \item Calculate the average and standard deviation of these values (the latter corresponds to $\Delta I$).
+
+        \item Calculate the percentage uncertainty in your value of $I$ using
+                \beq
+                    \textrm{Percentage Uncertainty} = \frac{\Delta I}{I} \times 100 \%
+                \eeq
+    \end{enumerate}
