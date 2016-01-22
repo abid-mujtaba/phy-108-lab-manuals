@@ -18,10 +18,15 @@
 \usepackage{tikz-helpgrid}          % Allows one to draw a light-colored grid over the diagram for aiding in element placement
 \usepackage{pgffor}
 
+% Disable backward compatibility mode for pgfplots
+\pgfplotsset{compat=1.12}
 
 % Tikz commands for externalizing images. This speeds up compilation.
 \usetikzlibrary{external}
 \tikzexternalize[prefix=build/]        % Activate image externalization
+
+% Load tikz library for patterns and decorations (platforms and springs)
+\usetikzlibrary{patterns,decorations.pathmorphing,decorations.markings}
 
 
 \newcommand{\beq}{\begin{equation}}
