@@ -9,7 +9,8 @@ import sys
 
 # The -shell-escape flag is needed because it allows pdflatex to spawn parallel processes for building tikz pdfs (this speeds up recompilation)
 # The -halt-on-error ensures that if an error occurs the interactive mode is NOT launched and the compilation halts immediately (without creating a broken pdf file). This allows issuing 'make' again to work since it detects a lack of the manual.pdf file and any other build/%.pdf files and recompiles accordingly
-COMMAND = "pdflatex -halt-on-error -shell-escape"
+# The --synctex=-1 runs synctex which generates a .synctex file (--synctex=1 creates a gzipped .synctex.gz file to save space). This file contains an index which relates pdf output to source code. In Atom clicking on any portion of the pdf will immediately jump you to the relevant portion of code
+COMMAND = "pdflatex -halt-on-error -shell-escape --synctex=-1"
 
 def main():
 

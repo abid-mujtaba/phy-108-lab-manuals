@@ -4,3 +4,4 @@ manual.pdf
 *.auxlock
 *.log
 *.fmt
+*.synctex
