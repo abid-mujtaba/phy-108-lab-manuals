@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This script uses subprocess to compile the Latex project.
 # It parses the output produced by every compilation and based on it re-compiles the project if necessary. For instance to get cross-references (using \label and \eqref) to work.
@@ -30,7 +30,7 @@ def compile(filename):
     rerun = False
 
     # We use this regex to filter the output and determine if the compilation needs to be rerun
-    regex = re.compile(".*Rerun.*")
+    regexes = [re.compile(".*Rerun.*"), re.compile(".*undefined references.*")]
 
     # Iterate over the output lines
     for line in iter(p.stdout.readline, b''):
@@ -38,8 +38,10 @@ def compile(filename):
         output = line.decode()      # Convert binary data to string
         print(output, end="")       # Print the line received
 
-        if (regex.match(output)):       # If the line matches the regex the rerun flag should be set
-            rerun = True
+        for regex in regexes:
+            if (regex.match(output)):       # If the line matches the regex the rerun flag should be set
+                rerun = True
+                break
 
     # Close the pipe stdout and the pipe itself otherwise the shell won't know that the pipe has terminated
     p.stdout.close()
