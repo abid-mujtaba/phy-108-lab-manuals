@@ -1,0 +1,26 @@
+\tikzsetnextfilename{series_springs}
+
+\begin{center}
+    \begin{tikzpicture}
+
+        \input{diag/spring_common}
+
+        \def\la{2}           % Length of spring
+        \def\lb{4}
+        \def\hw{0.75}
+
+        \draw [platform] (-\hw,\lb) rectangle (\hw,{\lb + \ph});
+        \draw [very thick] (-\hw,\lb) -- (\hw,\lb);       % Thick line underneath platform to which the spring is attached
+
+        \draw [spring2] (0,{\la + 0.2}) -- (0,\lb) node [midway, right=10] {$k_2$};
+
+        % Draw a line with a small circle in the middle to show the connection between the two springs
+        \draw (0,\la) -- (0,{\la + 0.2});
+        \draw [fill=black] (0,{\la + 0.1}) circle [radius=0.05];
+
+        \draw [spring1] (0,\la) -- (0,0) node [midway, right=10] {$k_1$};
+
+        \weight[]
+
+    \end{tikzpicture}
+\end{center}
