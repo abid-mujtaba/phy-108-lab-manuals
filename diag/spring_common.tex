@@ -1,0 +1,10 @@
+
+% Define styles that will automatically draw the spring and slanting line platform objects
+\tikzstyle{spring1}=[thick, decorate, decoration={aspect=0.5, segment length=2mm, amplitude=2mm, coil}]
+\tikzstyle{platform}=[fill, pattern=north east lines, draw=none, minimum width=1.5cm, minimum height=0.25cm]
+
+% Define a 'newdrawing' that corresponds to the weight box
+\newdrawing{\weight}{
+    \def\hw{0.25}
+    \draw (-\hw, 0) rectangle (\hw, {-2 * \hw}) node [midway] {$m$};        % Note: the use of [midway] to place the label midway between the starting and ending points of the rectangle
+}
