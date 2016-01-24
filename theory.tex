@@ -76,8 +76,14 @@ where $k$ is the Spring Constant.
 
     The weight of the mass causes the lower spring to extend which in turn applies a force on the upper spring causing it to extend as well. The force experienced by both springs is equal to the weight of the object. This can be demonstrated by drawing free-body diagrams (below) of the point where the mass is attached and the point where the two springs meet. At equilibrium both of these points are stationary and so the net force acting on them must be zero.
 
-    \diag
+    \begin{minipage}{0.5\textwidth}
+        \input{diag/series_fbd1}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \input{diag/series_fbd2}
+    \end{minipage}
 
+    \eline[0.5]
     Equating the upward and downward forces gives us $F_1 = W$ and $F_2 = F_1 = W$. Therefore in the series configuration each spring experiences the same force as the lowest spring. Each spring will response to this force with a different extension $x_1$ and $x_2$ since they have different spring constants $k_1$ and $k_2$. The net extension of the two-spring system is then the sum of the extensions of each individual spring: $x = x_1 + x_2$. We can now calculate the effective spring constant $k$ (a single spring with the same extension as the two springs in series) using \eqref{hookes_law} which tells us that $\displaystyle x = \frac{F}{k}$.
     %
     \beqc
