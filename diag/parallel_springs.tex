@@ -12,8 +12,8 @@
         \draw [platform] (-\hw,\l) rectangle (\hw,{\l+\ph});    % Using the [platform] modifier sets the fill pattern for the rectangle
         \draw [very thick] (-\hw,\l) -- (\hw,\l);       % Thick line underneath platform to which the spring is attached
 
-        \draw [spring1] (-\hws,\l) -- (-\hws,0);
-        \draw [spring2] (\hws,\l) -- (\hws,0);
+        \draw [spring1] (-\hws,\l) -- (-\hws,0) node [midway, left=7] {$k_1$};
+        \draw [spring2] (\hws,\l) -- (\hws,0) node [midway, right=7] {$k_2$};
 
         \draw [very thick] (-\hw, 0) -- (\hw, 0);
         \draw (0,0) -- (0,-0.25);
