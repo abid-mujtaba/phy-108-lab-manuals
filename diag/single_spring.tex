@@ -8,7 +8,7 @@
         \def\l{2}           % Length of spring
         \def\hw{0.75}
 
-        \node [platform, anchor=south] at (0,\l) {};
+        \draw [platform] (-\hw,\l) rectangle (\hw,{\l + \ph});
         \draw [very thick] (-\hw,\l) -- (\hw,\l);       % Thick line underneath platform to which the spring is attached
         \draw [spring1] (0,\l) -- (0,0);
 
