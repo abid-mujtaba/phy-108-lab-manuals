@@ -1,0 +1,14 @@
+\tikzsetnextfilename{series_fbd2}
+
+\begin{center}
+    \begin{tikzpicture}
+
+        \input{diag/spring_common}
+
+        \draw [fill=black] (0,0) circle [radius=0.05];
+
+        \draw [->, thick] (0,0) -- (0,\lv) node [above] {$F_2 = k_2 x_2$};
+        \draw [->, thick] (0,0) -- (0,-\lv) node [below] {$F_1 = k_1 x_1$};
+
+    \end{tikzpicture}
+\end{center}

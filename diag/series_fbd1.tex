@@ -1,0 +1,15 @@
+\tikzsetnextfilename{series_fbd1}
+
+\begin{center}
+    \begin{tikzpicture}
+
+        \input{diag/spring_common}
+
+        \def\l{\lv + \hww}
+
+        \weight[yshift=\hww]
+        \draw [->, thick] (0,\hww) -- (0, \l) node [above] {$F_1 = k_1 x_1$};
+        \draw [->, thick] (0, -\hww) -- (0, {-\lv -\hww}) node [below] {$W = m g$};
+
+    \end{tikzpicture}
+\end{center}

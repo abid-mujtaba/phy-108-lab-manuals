@@ -5,10 +5,12 @@
 
 \tikzstyle{platform}=[fill, pattern=north east lines, draw=none]
 
+\def\hww{0.25}      % Half Width of weight
+\def\lv{1}          % Length of vector in FBD
+
 % Define a 'newdrawing' that corresponds to the weight box
 \newdrawing{\weight}{
-    \def\hw{0.25}
-    \draw (-\hw, 0) rectangle (\hw, {-2 * \hw}) node [midway] {$m$};        % Note: the use of [midway] to place the label midway between the starting and ending points of the rectangle
+    \draw (-\hww, 0) rectangle (\hww, {-2 * \hww}) node [midway] {$m$};        % Note: the use of [midway] to place the label midway between the starting and ending points of the rectangle
 }
 
 \def\ph{0.25}       % height of the slanted line rectangle that constitutes a platform
