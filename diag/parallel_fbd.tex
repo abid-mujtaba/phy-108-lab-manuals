@@ -1,0 +1,16 @@
+\tikzsetnextfilename{parallel_fbd}
+
+\begin{center}
+    \begin{tikzpicture}
+
+        \def\hws{1}
+        \def\l{1.25}
+
+        \draw [very thick] (-\hws, 0) -- (\hws, 0);
+
+        \draw [->, thick] (0,0) -- (0,-\l) node [below] {$W = m g$};
+        \draw [->, thick] (-\hws, 0) -- (-\hws, \l) node [above] {$F_1 = k_1 x$};
+        \draw [->, thick] (\hws, 0) -- (\hws, \l) node [above] {$F_2 = k_2 x$};
+
+    \end{tikzpicture}
+\end{center}
