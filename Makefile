@@ -1,10 +1,6 @@
 NAME := manual.x				# The name pattern of files in the project. The .x will be substitued with the relevant extensions (pdf, tex, fmt, sty, .etc).
 FILE := $(NAME:.x=.pdf)			# The generated pdf file. Note the use or variable subsitutions to change manual.x to manual.pdf
 
-# We define the command that compiles the tex code.
-# We use a python script for this purpose which parses the output of the Latex compilation and re-compiles when needed
-COMPILE := ./compile.py
-
 # The purpose of the following block is to show the generated pdf file in an efficient fashion.
 # First we check if evince is present. If it is we simply use it to show the pdf. If evince is already showing the file it simply refreshes.
 # If evince is missing we check if mupdf is installed.
@@ -65,14 +61,13 @@ build/%.pdf: diag/%.tex
 $(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
 	make preamble
 
-# Compile the tex file.
+# Compile the tex file using scons which takes care of any repeated compilation that may be required
 compile:
-	$(COMPILE) $(NAME:.x=.tex)
+	scons
 
 # Remove all generated files (with the exception of comsats-logo.pdf)
 clean:
-	rm -f *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
-	ls *.pdf | grep -v "comsats-logo.pdf" | xargs -I {} rm {}
+	rm -f $(NAME:.x=.pdf) *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
 
 # Clean the environment before compiling the pdf afresh
 fresh:
