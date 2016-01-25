@@ -15,5 +15,8 @@ basename = 'manual'                         # Define basename of the main tex fi
 pdf = env.PDF(basename + '.tex')            # Primary source of the pdf file
 
 env.Clean(pdf, basename + '.synctex')       # when cleaning remove the pdf and the .synctex file
+env.Decider('timestamp-match')           # Use timestamp instead of MD5 to detect changes in the source code. Makes soncs more like make.
+# env.Decider('MD5-timestamp')            # Mix of both timestamp matching and MD5. Optimal choice (but not linke make)
+
 
 Default(pdf)            # Default target of the builder
