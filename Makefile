@@ -54,7 +54,7 @@ $(FILE): *.tex $(wildcard build/*.pdf) $(NAME:.x=.fmt)
 # If any of the diag/*.tex file is changed the corresponding pdf file needs to be recreated
 # We do that my deleting the corresponding pdf file using $@ which matches the whole target so 'build/<filename>.pdf'
 # By deleting the pdf file we force tikz externalization to recreate it because it won't find the pdf when it looks for it. An elegant solution to the complex inter-dependency of the tex and externalized tikz files.
-build/%.pdf: diag/%.tex
+build/%.pdf: diag/%.tex $(wildcard diag/*common*.tex)
 	rm -f $@
 
 # manual.fmt is created from abid-base.sty, manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
