@@ -67,7 +67,7 @@ compile:
 
 # Remove all generated files (with the exception of comsats-logo.pdf)
 clean:
-	rm -f $(NAME:.x=.pdf) *.aux *.log *.auxlock $(NAME:.x=.fmt) build/*.pdf build/*.log build/*.dpth build/*.md5
+	rm -f $(NAME:.x=.pdf) *.aux *.log *.auxlock $(NAME:.x=.fmt) $(NAME:.x=.fls) $(NAME:.x=.synctex) .sconsign.dblite build/*.pdf build/*.log build/*.dpth build/*.md5
 
 # Clean the environment before compiling the pdf afresh
 fresh:
