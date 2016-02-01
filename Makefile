@@ -46,7 +46,7 @@ all: $(NAME:.x=.pdf)			# We make the final .pdf file target a pre-req of 'all'. 
 # If any *.tex file is changed we compile again to create the pdf file.
 # manual.fmt is a dependecy. If manual.sty or manual.tex is changed manual.fmt will need to be recreated and so the command for manual.pdf will be run as well but after the processing for manual.fmt is complete.
 # Tikz externalization uses pre-created images (pdfs) in the build/ folder so build/*.pdf is a dependency. We use $(wildcard build/*.pdf) to create the list of pdfs in build/ since it will evaluate to empty if none are found. Using build/*.pdf directly as a dependency causes errors when no pdfs exist in build.
-$(FILE): *.tex $(wildcard build/*.pdf) $(NAME:.x=.fmt)
+$(FILE): *.tex $(wildcard build/*.pdf) $(NAME:.x=.fmt) $(wildcard build/asymptote/*.pdf)
 	make compile
 
 # We use patterns here.
@@ -56,6 +56,11 @@ $(FILE): *.tex $(wildcard build/*.pdf) $(NAME:.x=.fmt)
 # By deleting the pdf file we force tikz externalization to recreate it because it won't find the pdf when it looks for it. An elegant solution to the complex inter-dependency of the tex and externalized tikz files.
 build/%.pdf: diag/%.tex $(wildcard diag/*common*.tex)
 	rm -f $@
+
+build/asymptote/%.pdf: diag/%.asy
+	asy $<
+	mv $(@F) build/asymptote/
+
 
 # manual.fmt is created from abid-base.sty, manual.sty and manual.tex. If either of these change manual.fmt needs to be recreated using the 'make preamble' command.
 $(NAME:.x=.fmt): $(NAME:.x=.sty) $(NAME:.x=.tex) abid-base.sty ciit-manual.sty
