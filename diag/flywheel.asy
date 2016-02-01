@@ -1,5 +1,5 @@
-settings.tex="pdflatex";
-if (settings.render < 0) settings.render = 8;
+settings.tex="pdflatex";        // Produces PDF output by default
+if (settings.render < 0) settings.render = 8;       // Successive rendering required for rasterization which is needed for drawing 'revolution' type objects
 
 defaultpen(fontsize(10pt));
 unitsize(1cm);
