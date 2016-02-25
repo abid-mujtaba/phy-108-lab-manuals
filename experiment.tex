@@ -9,7 +9,7 @@
         \item String
         \item Mass (Bob)
         \item Stand
-        \item Alligator Clip
+        \item Alligator Clip (\textit{optional})
         \item Stop-watch
         \item Meter-stick
 
@@ -108,7 +108,7 @@
     %
     % Note: The use of \foreach from the pgffor package to provide a loop for the four t_{10_i}
     \beq
-        \bar{t}_{10} = \frac{1}{5} \sum\limits_{i = 1}^5 t_{10_i} = \frac{1}{5} ( t_{10_1} \foreach \n in {2,...,5} { + t_{10_\n} } )
+        \bar{t}_{10} = \frac{1}{n} \sum\limits_{i = 1}^n t_{10_i} \, \bigg|_{n = 5} = \frac{1}{5} ( t_{10_1} \foreach \n in {2,...,5} { + t_{10_\n} } )
     \eeq
 
     $\Delta (t_{10})$ is the standard deviation (uncertainty) in the five values $t_{10_i}$ calculated using
@@ -120,8 +120,8 @@
         %
         \begin{aligned}
             %
-            \Delta (t_{10}) &= \sqrt{ \frac{1}{5} \sum\limits_{i=1}^5 (t_{10_i} - \bar{t}_{10})^2} \\
-                            &= \sqrt{ \frac{1}{5} \big[ \seed{1} \foreach \n in {2,...,5}{ + \seed{\n}} \big] }
+            \Delta (t_{10}) &= \sqrt{ \frac{1}{n (n - 1)} \sum\limits_{i=1}^n (t_{10_i} - \bar{t}_{10})^2} \, \bigg|_{n = 5} \\
+                            &= \sqrt{ \frac{1}{5 \times 4} \big[ \seed{1} \foreach \n in {2,...,5}{ + \seed{\n}} \big] }
         \end{aligned}
     \end{equation}
 
