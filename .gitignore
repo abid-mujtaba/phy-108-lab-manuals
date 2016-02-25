@@ -4,3 +4,8 @@ manual.pdf
 *.auxlock
 *.log
 *.fmt
+*.synctex
+*.fls
+*.pre
+
+.sconsign.dblite
